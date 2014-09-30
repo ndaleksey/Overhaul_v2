@@ -1,0 +1,183 @@
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
+
+html {
+    margin: 0 auto;
+    width: 1248px;
+}
+
+body {
+    margin: 0 auto;
+    width: 1248px;
+    background-color: black;
+    /*padding: 0 4% 0;*/
+}
+
+#header {
+    background-image: url("../img/header.jpg");
+    width: 1248px;
+    height: 200px;
+}
+
+#main {
+    background: url("../img/back.png");
+    margin: 0;
+    padding: 0;
+}
+
+#footer {
+    margin-bottom: 5%;
+}
+
+#mainmenu {
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#btn1 {
+    background-image: url("../img/btn1.jpg");
+    width: 354px;
+    height: 58px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#btn1:hover {
+    background-image: url("../img/btn1_2.jpg");
+    width: 354px;
+    height: 58px;
+    cursor: pointer;
+}
+
+#btn2 {
+    background-image: url("../img/btn2.jpg");
+    width: 447px;
+    height: 58px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#btn2:hover {
+    background-image: url("../img/btn2_2.jpg");
+    width: 447px;
+    height: 58px;
+    cursor: pointer;
+}
+
+#btn3 {
+    background-image: url("../img/btn3.jpg");
+    width: 418px;
+    height: 58px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#btn3:hover {
+    background-image: url("../img/btn3_2.jpg");
+    width: 418px;
+    height: 58px cursor : pointer;
+}
+
+#btn4 {
+    background-image: url("../img/btn4.jpg");
+    width: 303px;
+    height: 68px;
+    cursor: pointer;
+    float: right;
+}
+
+#btn4:hover {
+    background-image: url("../img/btn4_2.jpg");
+    width: 303px;
+    height: 68px;
+    cursor: pointer;
+    float: right;
+}
+
+#main_text {
+    margin-top: 8%;
+    margin-left: 25%;
+    margin-right: 5%;
+    /*width: 75%;*/
+    color: goldenrod;
+    font-family: "Comic Sans MS";
+    /*font-size: 24;*/
+    font-size: 0.55cm;
+    font-weight: bold;
+}
+
+#example_photos {
+    float: left;
+    margin-left: 10%;
+    width: 724px;
+    height: 349px;
+    background: url("../img/example_photos.png") no-repeat;
+}
+
+#contacts {
+    font-family: "Comic Sans MS";
+    font-size: 0.5cm;
+    clear: both;
+    margin-left: 25%;
+}
+
+#featured {
+    width: 1024px;
+    height: 768px;
+    /*background: black url('photo/image_bg.png') no-repeat center center;*/
+    margin-top: 120px;
+    overflow: visible;
+    margin: 0 auto;
+}
+
+img {
+    /*margin: 0 auto;*/
+    /*display: block;*/
+}
+
+/* ===================== request order form ===============================*/
+
+#order_form {
+    width: 550px;
+    font-family: "Comic Sans MS";
+    font-size: 14;
+    color: #ffc54d;
+    background: #000000;
+    border: outset;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.textbox {
+    width: 370px;
+    font-family: Arial;
+    background-color: #d0d0d0;
+}
+
+/* ===================== for slides ===============================*/
+
+#container {
+    /*background-color: red;*/
+    width: 1024px;
+    margin: auto;
+    /*margin:40px auto;*/
+    /*position:relative;*/
+}
+
+#slides {
+    position: relative;
+}
+
+#slides.slidesContainer {
+    background: #fff;
+    border: 8px solid #fff;
+    margin-left: -8px;
+    box-shadow: 0 2.5px 5px rgba(0, 0, 0, .1);
+}
