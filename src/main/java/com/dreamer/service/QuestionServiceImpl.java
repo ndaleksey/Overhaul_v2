@@ -26,8 +26,7 @@ public class QuestionServiceImpl implements QuestionService {
     @Transactional
     @Override
     public List<Question> listQuestion() {
-//        return questionDAO.listQuestion();
-        return null;
+        return questionDAO.listQuestion();
     }
 
     @Transactional

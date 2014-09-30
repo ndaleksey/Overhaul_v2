@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="Overhaul_v2:war exploded">
     <output-path>$PROJECT_DIR$/target/Overhaul_v2</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="Overhaul_v2/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Overhaul_v2" />
@@ -37,6 +36,7 @@
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="Overhaul_v2/web/Web" />
     </root>
   </artifact>
 </component>

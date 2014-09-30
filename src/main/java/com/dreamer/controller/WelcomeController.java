@@ -52,12 +52,20 @@ public class WelcomeController {
         model.addAttribute("flatSquare", flatSquare);
         model.addAttribute("roomsQuantity", roomsQuantity);
 
-        return "order_response";
+        return "questions";
     }
-    @RequestMapping(value = "/add_question")
+
+    @RequestMapping(value = "question")
+    public String question(ModelMap model) {
+        model.addAttribute("questionList", questionService.listQuestion());
+        return "questions";
+    }
+
+    @RequestMapping(value = "/add_question", method = RequestMethod.GET)
     public String addQuestion(@ModelAttribute("question") Question question, BindingResult result) {
+
         questionService.addQuestion(question);
-        return "redirect:/questions";
+        return "redirect:/add_question";
     }
 
     /*@RequestMapping(value = "/questions")
