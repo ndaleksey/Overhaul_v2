@@ -32,7 +32,7 @@
     <div id="mainmenu">
         <a href="welcome" id="btn1"></a><!--
                 --><a href="examples" id="btn2"></a><!--
-                --><a href="question" id="btn3"></a>
+                --><a href="questions" id="btn3"></a>
     </div>
     <div>
         <h3>Сообщения</h3>
@@ -60,15 +60,15 @@
             </c:when>
         </c:choose>
         <br>
-        <%--<form:form method="get" action="add_question">
+        <form:form action="/add_question" commandName="question" method="GET">
             <div>
-                Ваше имя:<form:input path="${question.authorName}"/><br>
-                <form:textarea path="${question.message}"/>
+                Ваше имя:<form:input path="authorName"/><br>
+                Сообщение:<form:textarea path="message"/>
             </div>
             <div>
-                <input type="submit">
+                <input type="submit" value="Добавить вопрос">
             </div>
-        </form:form>--%>
+        </form:form>
     </div>
     <div id="footer"></div>
 </div>

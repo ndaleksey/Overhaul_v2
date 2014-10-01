@@ -20,7 +20,7 @@
     <div id="mainmenu">
         <a href="welcome" id="btn1"></a><!--
                 --><a href="examples" id="btn2"></a><!--
-                --><a href="question" id="btn3"></a>
+                --><a href="questions" id="btn3"></a>
     </div>
     <div id="main_text">
         <p>

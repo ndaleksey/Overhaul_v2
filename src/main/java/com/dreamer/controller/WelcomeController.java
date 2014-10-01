@@ -5,7 +5,6 @@ import com.dreamer.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -55,17 +54,18 @@ public class WelcomeController {
         return "questions";
     }
 
-    @RequestMapping(value = "question")
-    public String question(ModelMap model) {
+    @RequestMapping(value = "/questions")
+    public String questions(ModelMap model) {
+        Question question = new Question();
+        model.addAttribute("question", question);
         model.addAttribute("questionList", questionService.listQuestion());
         return "questions";
     }
 
     @RequestMapping(value = "/add_question", method = RequestMethod.GET)
-    public String addQuestion(@ModelAttribute("question") Question question, BindingResult result) {
-
+    public String addQuestion(@ModelAttribute("question") Question question) {
         questionService.addQuestion(question);
-        return "redirect:/add_question";
+        return "redirect:/questions";
     }
 
     /*@RequestMapping(value = "/questions")
