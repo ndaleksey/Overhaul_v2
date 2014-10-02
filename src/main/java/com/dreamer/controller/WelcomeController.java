@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  * Created by Shishkov A.V. on 10.09.2014.
  */
@@ -64,6 +67,7 @@ public class WelcomeController {
 
     @RequestMapping(value = "/add_question", method = RequestMethod.GET)
     public String addQuestion(@ModelAttribute("question") Question question) {
+        question.setPostDate(new Timestamp(new Date().getTime()));
         questionService.addQuestion(question);
         return "redirect:/questions";
     }
