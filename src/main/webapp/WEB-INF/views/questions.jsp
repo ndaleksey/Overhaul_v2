@@ -37,21 +37,22 @@
     <div>
         <h3>Сообщения</h3>
         <c:if test="${!empty questionList}">
-            <table style="color: red; border: 1px;">
-                <tr>
-                    <th>#</th>
-                    <th>Текст сообщения</th>
-                    <th>Автор</th>
-                    <th>Дата</th>
-                </tr>
+            <table>
+                <tbody>
                 <c:forEach items="${questionList}" var="question">
                     <tr>
-                        <td>${question.id}</td>
-                        <td>${question.message}</td>
-                        <td>${question.authorName}</td>
-                        <td>${question.postDate}</td>
+                        <td class="tdQuestion" colspan="2">
+                            <div class="question">${question.message}</div>
+                        </td>
+                        <td class="tdAnswer" align="right" colspan="2">
+                            <div class="answer">Своими руками или можете воспользоваться услугами нашей фирмы</div>
+                        </td>
+                    </tr>
+                    <tr class="emptyRow">
+                        <td colspan="2"></td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
         </c:if>
         <c:choose>
