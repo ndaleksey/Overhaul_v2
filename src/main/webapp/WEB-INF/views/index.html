@@ -1,64 +1,91 @@
 <!doctype html>
-<meta charset="utf-8">
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="windows-1251">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Р—Р°СЏРІРєР°</title>
+    <title>Заявка</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="../resources/css/index.css"/>
 
 </head>
-<body>
-<table>
-    <tbody>
-    <tr>
-        <td class="tdQuestion" colspan="2">
-            <div class="question">РљР°Рє СЃРґРµР»Р°С‚СЊ Р±С‹СЃС‚СЂС‹Р№ СЂРµРјРѕРЅС‚ РєРѕРјРЅР°С‚С‹ Р·Р° 15 С‚С‹СЃ. СЂСѓР±?</div>
-        </td>
-    </tr>
-    <tr>
-        <td class="tdAnswer" align="right" colspan="2">
-            <div class="answer">РЎРІРѕРёРјРё СЂСѓРєР°РјРё РёР»Рё РјРѕР¶РµС‚Рµ РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ СѓСЃР»СѓРіР°РјРё РЅР°С€РµР№ С„РёСЂРјС‹</div>
-        </td>
-    </tr>
-    <tr class="emptyRow">
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td class="tdQuestion" colspan="2">
-            <div class="question">РҐРѕС‡Сѓ СЃРґРµР»Р°С‚СЊ СЂРµРјРѕРЅС‚ РІ РІРµРЅРµС†РёР°РЅСЃРєРѕРј СЃС‚РёР»Рµ СЃ РїРёР»СЏСЃС‚СЂР°РјРё РёР· Р±СЂРѕРЅР·С‹ РґР»СЏ Р»РµСЃС‚РЅРёС†С‹. Р’С‹
-                Р·Р°РЅРёРјР°РµС‚РµСЃСЊ
-                РґРёР·Р°Р№РЅРѕРј?
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td class="tdAnswer" align="right" colspan="2">
-            <div class="answer">РќСѓ, РїРѕРґ С…РѕСЂРѕС€РµРµ РІРёРЅРѕ СѓСЂРѕР¶Р°СЏ 1652 РіРѕРґР° РјС‹ СЃ Р’Р°РјРё СЃРґРµР»Р°Рј С‚Рѕ, С‡С‚Рѕ РЅРµ СЃРЅРёР»РѕСЃСЊ Р›РµРѕРЅР°СЂРґРѕ</div>
-        </td>
-    </tr>
-    <tr class="emptyRow">
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td class="tdQuestion" colspan="2">
-            <div class="question">РџСЂРѕСЃС‚РёС‚Рµ, Р° Р’С‹ РєСЂС‹С€Рё СЂРµРјРѕРЅС‚РёСЂСѓРµС‚Рµ? РљСЂС‹С€СѓРµС‚Рµ С‚Р°Рє СЃРєР°Р·Р°С‚СЊ?</div>
-        </td>
-    </tr>
-    <tr>
-        <td class="tdAnswer" align="right" colspan="2">
-            <div class="answer">Р”Р° РјС‹ Р·Р° РґРµРЅСЊРіРё РЅРµ С‚РѕР»СЊРєРѕ РєСЂС‹С€СѓРµРј, РјС‹ РµС‰Рµ Рё РѕС‚Р¶РёРјРѕРј Р·Р°РЅРёРјР°РµРјСЃСЏ</div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<body onload="scrollToElement('sendBtn');">
+<script>
+    function scrollToElement(theElement) {
+        /*if (typeof theElement === "string") theElement = document.getElementById(theElement);
+        var selectedPosX = 0;
+        var selectedPosY = 0;
+        while (theElement != null) {
+            selectedPosX += theElement.offsetLeft;
+            selectedPosY += theElement.offsetTop;
+            theElement = theElement.offsetParent;
+            console.log(selectedPosY);
+        }
+        window.scrollTo(selectedPosX, selectedPosY);*/
+        var i = 0;
+        var interval = setInterval(function () {
+            if (document.documentElement.scrollTop !== 0) {
+                window.scrollBy(0, i);
+                i--;
+            } else {
+                clearInterval(interval);
+            }
+        }, 10)
+    }
 
-<form id="messageFrom">
-    РќРёРє:<input id="nickBox" type="text"><br/>
-    РЎРѕРѕР±С‰РµРЅРёРµ:<br/><textarea id="messageBox" rows="5" cols="50" maxlength="255"></textarea>
+</script>
+<div id="messages">
+    <table>
+        <tbody>
+        <tr>
+            <td class="tdQuestion" colspan="2">
+                <div class="question">Как сделать быстрый ремонт комнаты за 15 тыс. руб?</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdAnswer" align="right" colspan="2">
+                <div class="answer">Своими руками или можете воспользоваться услугами нашей фирмы</div>
+            </td>
+        </tr>
+        <tr class="emptyRow">
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td class="tdQuestion" colspan="2">
+                <div class="question">Хочу сделать ремонт в венецианском стиле с пилястрами из бронзы для лестницы. Вы
+                    занимаетесь
+                    дизайном?
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdAnswer" align="right" colspan="2">
+                <div class="answer">Ну, под хорошее вино урожая 1652 года мы с Вами сделам то, что не снилось Леонардо
+                </div>
+            </td>
+        </tr>
+        <tr class="emptyRow">
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td class="tdQuestion" colspan="2">
+                <div class="question">Простите, а Вы крыши ремонтируете? Крышуете так сказать?</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdAnswer" align="right" colspan="2">
+                <div class="answer">Да мы за деньги не только крышуем, мы еще и отжимом занимаемся</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<form id="messageForm" name="form">
+    Ник:<input id="nickBox" type="text"><br/>
+    Сообщение:<br/><textarea id="messageBox" rows="6" cols="50" maxlength="255"></textarea><br/>
+    <input id="sendBtn" type="submit" value="Отправить">
 </form>
 
 <!--<div class="messageBox">

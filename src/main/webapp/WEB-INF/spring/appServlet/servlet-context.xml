@@ -31,7 +31,6 @@
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <beans:property name="url" value="jdbc:mysql://localhost:3306/Overhaul"/>
         <beans:property name="username" value="root"/>
-        <beans:property name="password" value=""/>
     </beans:bean>
     <!-- Hibernate sessionfactory -->
     <beans:bean id="sessionFactory"
@@ -47,10 +46,14 @@
                 <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
                 <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
-                <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul</beans:prop>
+                <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul?UseUnicode=true&amp;characterEncoding=cp1251</beans:prop>
                 <beans:prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</beans:prop>
                 <beans:prop key="hibernate.connection.username">root</beans:prop>
                 <beans:prop key="hibernate.connection.password"></beans:prop>
+
+                <beans:prop key="hibernate.connection.CharSet">cp1251</beans:prop>
+                <beans:prop key="hibernate.connection.characterEncoding">cp1251</beans:prop>
+                <beans:prop key="hibernate.connection.useUnicode">true</beans:prop>
             </beans:props>
         </beans:property>
     </beans:bean>

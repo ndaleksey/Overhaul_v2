@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=windows-1251" %>
-<%@ page pageEncoding="CP1251" %>
+<%@ page pageEncoding="windows-1251" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
+    <meta charset="windows-1251">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Заявка</title>
     <meta name="description" content="">
@@ -27,6 +27,12 @@
 
 </head>
 <body>
+<script>
+    function onload() {
+        alert("Hello");
+        javascript:document.all.abottom.scrollIntoView(true);
+    }
+</script>
 <div id="header"></div>
 <div id="main">
     <div id="mainmenu">
@@ -35,7 +41,6 @@
                 --><a href="questions" id="btn3"></a>
     </div>
     <div>
-        <h3>Сообщения</h3>
         <c:if test="${!empty questionList}">
             <table>
                 <tbody>
@@ -44,6 +49,8 @@
                         <td class="tdQuestion" colspan="2">
                             <div class="question">${question.message}</div>
                         </td>
+                    </tr>
+                    <tr>
                         <td class="tdAnswer" align="right" colspan="2">
                             <div class="answer">Своими руками или можете воспользоваться услугами нашей фирмы</div>
                         </td>
@@ -61,14 +68,10 @@
             </c:when>
         </c:choose>
         <br>
-        <form:form action="/add_question" commandName="question" method="GET">
-            <div>
-                Ваше имя:<form:input path="authorName"/><br>
-                Сообщение:<form:textarea path="message"/>
-            </div>
-            <div>
-                <input type="submit" value="Добавить вопрос">
-            </div>
+        <form:form acceptCharset="windows-1251" id="messageForm" action="/add_question" commandName="question" method="GET">
+            Ваше имя:<form:input id="nickBox" path="authorName"/><br>
+            Сообщение:<br/><form:textarea id="messageBox" rows="6" cols="50" maxlength="255" path="message"/><br/>
+            <input id="sendBtn" type="submit" value="Добавить вопрос" onclick="javascript:document.all.abottom.scrollIntoView(true)">
         </form:form>
     </div>
     <div id="footer"></div>
