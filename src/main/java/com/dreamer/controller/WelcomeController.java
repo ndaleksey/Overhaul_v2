@@ -65,7 +65,7 @@ public class WelcomeController {
         return "questions";
     }
 
-    @RequestMapping(value = "/add_question", method = RequestMethod.GET)
+    @RequestMapping(value = "/add_question", method = RequestMethod.POST)
     public String addQuestion(@ModelAttribute("question") Question question) {
         question.setPostDate(new Timestamp(new Date().getTime()));
         questionService.addQuestion(question);

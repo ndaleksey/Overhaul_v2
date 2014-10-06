@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=windows-1251" %>
-<%@ page pageEncoding="windows-1251" %>
+<%@ page pageEncoding="CP1251" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
@@ -68,7 +68,7 @@
             </c:when>
         </c:choose>
         <br>
-        <form:form acceptCharset="windows-1251" id="messageForm" action="/add_question" commandName="question" method="GET">
+        <form:form acceptCharset="windows-1251" id="messageForm" action="/add_question" commandName="question" method="POST">
             Ваше имя:<form:input id="nickBox" path="authorName"/><br>
             Сообщение:<br/><form:textarea id="messageBox" rows="6" cols="50" maxlength="255" path="message"/><br/>
             <input id="sendBtn" type="submit" value="Добавить вопрос" onclick="javascript:document.all.abottom.scrollIntoView(true)">

@@ -46,7 +46,7 @@
                 <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
                 <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
-                <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul?UseUnicode=true&amp;characterEncoding=cp1251</beans:prop>
+                <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul</beans:prop>
                 <beans:prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</beans:prop>
                 <beans:prop key="hibernate.connection.username">root</beans:prop>
                 <beans:prop key="hibernate.connection.password"></beans:prop>
