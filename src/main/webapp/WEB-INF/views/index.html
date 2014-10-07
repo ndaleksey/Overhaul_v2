@@ -14,15 +14,15 @@
 <script>
     function scrollToElement(theElement) {
         /*if (typeof theElement === "string") theElement = document.getElementById(theElement);
-        var selectedPosX = 0;
-        var selectedPosY = 0;
-        while (theElement != null) {
-            selectedPosX += theElement.offsetLeft;
-            selectedPosY += theElement.offsetTop;
-            theElement = theElement.offsetParent;
-            console.log(selectedPosY);
-        }
-        window.scrollTo(selectedPosX, selectedPosY);*/
+         var selectedPosX = 0;
+         var selectedPosY = 0;
+         while (theElement != null) {
+         selectedPosX += theElement.offsetLeft;
+         selectedPosY += theElement.offsetTop;
+         theElement = theElement.offsetParent;
+         console.log(selectedPosY);
+         }
+         window.scrollTo(selectedPosX, selectedPosY);*/
         var i = 0;
         var interval = setInterval(function () {
             if (document.documentElement.scrollTop !== 0) {
@@ -36,9 +36,14 @@
 
 </script>
 <div id="messages">
-    <table>
+    <table border="2">
         <tbody>
         <tr>
+            <td class="tdAvatar">
+                <div class="userAvatar"></div>
+                <div class="authorName">Пользоватееееель</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
             <td class="tdQuestion" colspan="2">
                 <div class="question">Как сделать быстрый ремонт комнаты за 15 тыс. руб?</div>
             </td>
@@ -47,11 +52,21 @@
             <td class="tdAnswer" align="right" colspan="2">
                 <div class="answer">Своими руками или можете воспользоваться услугами нашей фирмы</div>
             </td>
+            <td class="tdAvatar">
+                <div class="adminAvatar"></div>
+                <div class="authorName">Админ</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
         </tr>
         <tr class="emptyRow">
-            <td colspan="2"></td>
+            <td colspan="3"></td>
         </tr>
         <tr>
+            <td class="tdAvatar">
+                <div class="userAvatar"></div>
+                <div class="authorName">Пользоватееееель</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
             <td class="tdQuestion" colspan="2">
                 <div class="question">Хочу сделать ремонт в венецианском стиле с пилястрами из бронзы для лестницы. Вы
                     занимаетесь
@@ -64,11 +79,21 @@
                 <div class="answer">Ну, под хорошее вино урожая 1652 года мы с Вами сделам то, что не снилось Леонардо
                 </div>
             </td>
+            <td class="tdAvatar">
+                <div class="adminAvatar"></div>
+                <div class="authorName">Админ</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
         </tr>
         <tr class="emptyRow">
-            <td colspan="2"></td>
+            <td colspan="3"></td>
         </tr>
         <tr>
+            <td class="tdAvatar">
+                <div class="userAvatar"></div>
+                <div class="authorName">Пользоватееееель</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
             <td class="tdQuestion" colspan="2">
                 <div class="question">Простите, а Вы крыши ремонтируете? Крышуете так сказать?</div>
             </td>
@@ -77,13 +102,18 @@
             <td class="tdAnswer" align="right" colspan="2">
                 <div class="answer">Да мы за деньги не только крышуем, мы еще и отжимом занимаемся</div>
             </td>
+            <td class="tdAvatar">
+                <div class="adminAvatar"></div>
+                <div class="authorName">Админ</div>
+                <div class="postDate">01.01.2014</div>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
 
 <form id="messageForm" name="form">
-    Ник:<input id="nickBox" type="text"><br/>
+    Ник:<input id="nickBox" type="text" maxlength="20"><br/>
     Сообщение:<br/><textarea id="messageBox" rows="6" cols="50" maxlength="255"></textarea><br/>
     <input id="sendBtn" type="submit" value="Отправить">
 </form>

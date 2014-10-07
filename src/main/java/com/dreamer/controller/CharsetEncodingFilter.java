@@ -9,7 +9,7 @@ import java.io.IOException;
 public class CharsetEncodingFilter implements Filter {
     private static final String FILTERABLE_CONTENT_TYPE="application/x-www-form-urlencoded";
 
-    private static final String ENCODING_DEFAULT = "CP1251";
+    private static final String ENCODING_DEFAULT = "utf8";
 
     private static final String ENCODING_INIT_PARAM_NAME = "encoding";
 

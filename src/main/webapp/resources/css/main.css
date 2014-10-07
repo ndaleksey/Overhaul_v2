@@ -261,6 +261,36 @@ tr.emptyRow {
     height: 50px;
 }
 
+td.tdAvatar {
+    width: 80px;
+}
+
+.userAvatar {
+    background: url("../img/user.png") no-repeat;
+    width: 80px;
+    height: 70px;
+}
+
+.adminAvatar {
+    background: url("../img/admin.png") no-repeat;
+    width: 80px;
+    height: 70px;
+}
+
+.authorName {
+    color: red;
+    background: orange;
+    width: 80px;
+    display: inline;
+}
+
+.postDate {
+    width: 80px;
+    text-align: center;
+    /*background: navy;*/
+    color: #ffff00;
+}
+
 #messages {
     overflow: auto;
 }
