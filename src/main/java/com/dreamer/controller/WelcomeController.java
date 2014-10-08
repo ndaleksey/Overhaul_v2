@@ -23,6 +23,21 @@ public class WelcomeController {
     @Autowired
     private QuestionService questionService;
 
+    @RequestMapping(value = "/error404")
+    public String error404() {
+        return "error404";
+    }
+
+    @RequestMapping(value = "/index")
+    public String index() {
+        return "redirect:/welcome";
+    }
+
+    @RequestMapping(value = "/login")
+    public String login() {
+        return "login";
+    }
+
     @RequestMapping(value = "/welcome")
     public String welcome() {
         return "welcome";
