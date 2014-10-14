@@ -28,6 +28,11 @@ public class WelcomeController {
         return "error404";
     }
 
+    @RequestMapping(value = "/admin")
+    public String admin() {
+        return "redirect:/welcome";
+    }
+
     @RequestMapping(value = "/index")
     public String index() {
         return "redirect:/welcome";

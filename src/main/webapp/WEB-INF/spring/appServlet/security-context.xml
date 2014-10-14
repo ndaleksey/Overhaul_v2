@@ -7,36 +7,18 @@
 	        http://www.springframework.org/schema/security
 	        http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-    <!--<http access-denied-page="/error404">
-        <intercept-url pattern="/index*" access="ROLE_USER,ROLE_ANONYMOUS"/>
-        <intercept-url pattern="/examples*" access="ROLE_USER, ROLE_ANONYMOUS"/>
-        <intercept-url pattern="/questions*" access="ROLE_USER, ROLE_ANONYMOUS"/>
-
-        <form-login login-page="/login" default-target-url="/login"
-                    authentication-failure-url="/login?error"
-                    username-parameter="username"
-                    password-parameter="password"/>
+    <http>
+        <intercept-url pattern="/admin**" access="ROLE_ADMIN"/>
+        <form-login login-page="/login" default-target-url="/welcome"
+                authentication-failure-url="/login?error"
+                always-use-default-target="true"/>
         <logout logout-url="/logout" logout-success-url="/login?logout"/>
-
-        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
     </http>
 
     <authentication-manager>
         <authentication-provider>
             <user-service>
                 <user name="ivan" password="ivan" authorities="ROLE_ADMIN"/>
-            </user-service>
-        </authentication-provider>
-    </authentication-manager>-->
-
-    <http auto-config="true">
-        <intercept-url pattern="/admin**" access="ROLE_ADMIN"/>
-    </http>
-
-    <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="ivan" authorities="ROLE_ADMIN" password="ivan"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>

@@ -303,7 +303,7 @@ td.tdAvatar {
     font-size: 14pt;
 }
 
-#nickBox {
+#nickBox, #adminLogin, #adminPswd {
     border-radius: 10px;
     padding: 5px;
     margin-left: 10px;
@@ -318,6 +318,12 @@ td.tdAvatar {
     max-height: 100px;
     background: url("../img/brickwall.png");
     color: darkblue;
+}
+
+table#loginTable {
+    color: darkorange;
+    width: 280px;
+    height: auto;
 }
 
 #sendBtn {
