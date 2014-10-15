@@ -1,18 +1,22 @@
 package com.dreamer.domain;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
 /**
- * Created by Shishkov A.V. on 30.09.2014.
+ * Created by Shishkov A.V. on 15.10.2014.
  */
 @Entity
-@Table(name = "Question")
 public class Question {
     private int id;
-    private String message;
     private String authorName;
+    private String message;
     private Timestamp postDate;
+    private String answer;
+    private Timestamp answerDate;
 
     @Id
     @Column(name = "id")
@@ -22,16 +26,6 @@ public class Question {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Basic
-    @Column(name = "message")
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     @Basic
@@ -45,13 +39,47 @@ public class Question {
     }
 
     @Basic
+    @Column(name = "message")
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Basic
+//    @Type(type = "com.dreamer.domain.MySQLZeroDate")
     @Column(name = "post_date")
     public Timestamp getPostDate() {
         return postDate;
     }
 
+//    @Type(type = "com.dreamer.domain.MySQLZeroDate")
     public void setPostDate(Timestamp postDate) {
         this.postDate = postDate;
+    }
+
+    @Basic
+    @Column(name = "answer")
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    @Basic
+//    @Type(type = "com.dreamer.domain.MySQLZeroDate")
+    @Column(name = "answer_date")
+    public Timestamp getAnswerDate() {
+        return answerDate;
+    }
+
+//    @Type(type = "com.dreamer.domain.MySQLZeroDate")
+    public void setAnswerDate(Timestamp answerDate) {
+        this.answerDate = answerDate;
     }
 
     @Override
@@ -62,6 +90,8 @@ public class Question {
         Question question = (Question) o;
 
         if (id != question.id) return false;
+        if (answer != null ? !answer.equals(question.answer) : question.answer != null) return false;
+        if (answerDate != null ? !answerDate.equals(question.answerDate) : question.answerDate != null) return false;
         if (authorName != null ? !authorName.equals(question.authorName) : question.authorName != null) return false;
         if (message != null ? !message.equals(question.message) : question.message != null) return false;
         if (postDate != null ? !postDate.equals(question.postDate) : question.postDate != null) return false;
@@ -72,9 +102,11 @@ public class Question {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (authorName != null ? authorName.hashCode() : 0);
+        result = 31 * result + (message != null ? message.hashCode() : 0);
         result = 31 * result + (postDate != null ? postDate.hashCode() : 0);
+        result = 31 * result + (answer != null ? answer.hashCode() : 0);
+        result = 31 * result + (answerDate != null ? answerDate.hashCode() : 0);
         return result;
     }
 }

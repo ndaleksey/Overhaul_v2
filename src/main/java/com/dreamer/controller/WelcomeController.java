@@ -88,8 +88,17 @@ public class WelcomeController {
     @RequestMapping(value = "/add_question", method = RequestMethod.POST)
     public String addQuestion(@ModelAttribute("question") Question question) {
         question.setPostDate(new Timestamp(new Date().getTime()));
+        question.setAnswerDate(new Timestamp(new Date().getTime()));
         questionService.addQuestion(question);
         return "redirect:/questions";
+    }
+
+    @RequestMapping(value = "/answers")
+    public String answers(ModelMap model) {
+        Question question = new Question();
+        model.addAttribute("question", question);
+        model.addAttribute("questionList", questionService.listQuestion());
+        return "answers";
     }
 
     /*@RequestMapping(value = "/questions")

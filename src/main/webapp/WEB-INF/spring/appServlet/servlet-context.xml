@@ -50,6 +50,9 @@
                 <beans:prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</beans:prop>
                 <beans:prop key="hibernate.connection.username">root</beans:prop>
                 <beans:prop key="hibernate.connection.password"></beans:prop>
+                <!--<beans:prop key="hibernate.connection.zeroDateTimeBehavior">
+                    convertToNull
+                </beans:prop>-->
 
                 <!--<beans:prop key="hibernate.connection.CharSet">cp1251</beans:prop>-->
                 <!--<beans:prop key="hibernate.connection.characterEncoding">cp1251</beans:prop>-->

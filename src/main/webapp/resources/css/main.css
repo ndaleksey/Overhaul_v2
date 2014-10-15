@@ -333,3 +333,11 @@ table#loginTable {
     padding: 5px 20px;
     font-size: 14pt;
 }
+
+.answersTable {
+    font-family: 'Comic Sans MS';
+    color: darkorange;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    padding: 10px;
+}
