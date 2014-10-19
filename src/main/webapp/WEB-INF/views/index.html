@@ -11,30 +11,6 @@
 
 </head>
 <body onload="scrollToElement('sendBtn');">
-<script>
-    function scrollToElement(theElement) {
-        /*if (typeof theElement === "string") theElement = document.getElementById(theElement);
-         var selectedPosX = 0;
-         var selectedPosY = 0;
-         while (theElement != null) {
-         selectedPosX += theElement.offsetLeft;
-         selectedPosY += theElement.offsetTop;
-         theElement = theElement.offsetParent;
-         console.log(selectedPosY);
-         }
-         window.scrollTo(selectedPosX, selectedPosY);*/
-        var i = 0;
-        var interval = setInterval(function () {
-            if (document.documentElement.scrollTop !== 0) {
-                window.scrollBy(0, i);
-                i--;
-            } else {
-                clearInterval(interval);
-            }
-        }, 10)
-    }
-
-</script>
 <div id="messages">
     <table border="2">
         <tbody>

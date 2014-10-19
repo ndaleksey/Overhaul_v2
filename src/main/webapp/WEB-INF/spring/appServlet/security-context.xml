@@ -9,6 +9,7 @@
 
     <http>
         <intercept-url pattern="/admin**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/answers**" access="ROLE_ADMIN"/>
         <form-login login-page="/login" default-target-url="/welcome"
                 authentication-failure-url="/login?error"
                 always-use-default-target="true"/>

@@ -23,6 +23,8 @@ public class WelcomeController {
     @Autowired
     private QuestionService questionService;
 
+    String methodName;
+
     @RequestMapping(value = "/error404")
     public String error404() {
         return "error404";
@@ -95,6 +97,28 @@ public class WelcomeController {
 
     @RequestMapping(value = "/answers")
     public String answers(ModelMap model) {
+        Question question = new Question();
+        model.addAttribute("question", question);
+        model.addAttribute("method_name", methodName);
+        model.addAttribute("questionList", questionService.listQuestion());
+        return "answers";
+    }
+
+    @RequestMapping(value = "/add_answer", method = RequestMethod.POST)
+    public String addAnswer() {
+        return "add_answer";
+    }
+
+    @RequestMapping(value = "/modify_answer")
+    public String modifyAnswer(ModelMap model) {
+        Question question = new Question();
+        model.addAttribute("question", question);
+        model.addAttribute("questionList", questionService.listQuestion());
+        return "answers";
+    }
+
+    @RequestMapping(value = "/delete_answer")
+    public String deleteAnswer(ModelMap model) {
         Question question = new Question();
         model.addAttribute("question", question);
         model.addAttribute("questionList", questionService.listQuestion());

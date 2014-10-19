@@ -10,7 +10,8 @@ import java.util.Date;
 /**
  * Created by Shishkov A.V. on 15.10.2014.
  */
-public class MySQLZeroDate implements UserType {
+public class
+        MySQLZeroDate implements UserType {
 
     private static final int[] SQL_TYPES = { Types.TIMESTAMP };
 

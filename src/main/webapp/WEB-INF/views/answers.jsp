@@ -38,13 +38,30 @@
             </tr>
             </thead>
             <tbody>
+            <%--<c:if test="${method_name != ''}"><h3>${method_name}</h3></c:if>--%>
             <c:forEach items="${questionList}" var="question">
                 <tr>
                     <td>${question.message}</td>
                     <td>${question.authorName}</td>
                     <td>${question.postDate}</td>
                     <td>${question.answer}</td>
-                    <td>${question.answer_date}</td>
+                    <td>${question.answerDate}</td>
+                    <td>
+                        <form action="/add_answer" method="post">
+                            <input type="button" value="Ответить"/>
+                        </form>
+                        <form action="/modify_answer" method="post">
+                            <input type="button" value="Изменить"/>
+                        </form>
+                        <form action="/delete_answer" method="post">
+                            <input type="button" value="Удалить/>
+                        </form>
+                        <%--<form method="get" action="/add_answer">
+                            <input id="param1" type="submit" value="add" >
+                            <input id="param2" type="submit" value="modify">
+                            <input id="param3" type="submit" value="remove">
+                        </form>--%>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
