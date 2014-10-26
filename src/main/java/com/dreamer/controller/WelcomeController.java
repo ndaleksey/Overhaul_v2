@@ -62,12 +62,12 @@ public class WelcomeController {
 
     @RequestMapping(value = "/order_response", method = RequestMethod.POST)
     public String order_response(@RequestParam(required = true, defaultValue = "Гость") String userName,
-                                @RequestParam(required = true) String email,
-                                @RequestParam(required = true) String address,
-                                @RequestParam(required = true) String phoneNumber,
-                                @RequestParam(required = true, defaultValue = "0.0") float flatSquare,
-                                @RequestParam(required = true, defaultValue = "1") int roomsQuantity,
-                                @RequestParam String message, ModelMap model) {
+                                 @RequestParam(required = true) String email,
+                                 @RequestParam(required = true) String address,
+                                 @RequestParam(required = true) String phoneNumber,
+                                 @RequestParam(required = true, defaultValue = "0.0") float flatSquare,
+                                 @RequestParam(required = true, defaultValue = "1") int roomsQuantity,
+                                 @RequestParam String message, ModelMap model) {
 
         model.addAttribute("userName", userName);
         model.addAttribute("email", email);
@@ -104,23 +104,27 @@ public class WelcomeController {
         return "answers";
     }
 
-    @RequestMapping(value = "/add_answer", method = RequestMethod.POST)
-    public String addAnswer() {
-        return "add_answer";
-    }
+    @RequestMapping(value = "/update_question", method = RequestMethod.GET)
+    public String updateQuestion(@ModelAttribute("question") Question question, @RequestParam("questionId") String questionId) {
 
-    @RequestMapping(value = "/modify_answer")
-    public String modifyAnswer(ModelMap model) {
-        Question question = new Question();
-        model.addAttribute("question", question);
-        model.addAttribute("questionList", questionService.listQuestion());
-        return "answers";
+        int id = Integer.parseInt(questionId);
+        Question question1 = questionService.getQuestionById(id);
+
+        question.setId(question1.getId());
+        question.setMessage(question1.getMessage());
+        question.setPostDate(question1.getPostDate());
+        question.setAuthorName(question1.getAuthorName());
+        question.setAnswerDate(new Timestamp(new Date().getTime()));
+        questionService.modifyQuestion(question);
+
+        return "redirect:/answers";
     }
 
     @RequestMapping(value = "/delete_answer")
     public String deleteAnswer(ModelMap model) {
-        Question question = new Question();
-        model.addAttribute("question", question);
+//        Question question = new Question();
+//        model.addAttribute("question", question);
+
         model.addAttribute("questionList", questionService.listQuestion());
         return "answers";
     }

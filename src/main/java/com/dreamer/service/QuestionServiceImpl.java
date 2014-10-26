@@ -25,8 +25,20 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Transactional
     @Override
+    public void modifyQuestion(Question question) {
+        questionDAO.modifyQuestion(question);
+    }
+
+    @Transactional
+    @Override
     public List<Question> listQuestion() {
         return questionDAO.listQuestion();
+    }
+
+    @Transactional
+    @Override
+    public Question getQuestionById(int id) {
+        return questionDAO.getQuestionById(id);
     }
 
     @Transactional

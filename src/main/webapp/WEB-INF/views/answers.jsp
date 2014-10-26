@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=windows-1251" %>
 <%@ page pageEncoding="CP1251" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -24,7 +25,7 @@
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
 </head>
-<body>
+<body onkeydown="keydown(event)">
 <div id="main">
     <c:if test="${!empty questionList}">
         <table class="answersTable">
@@ -38,7 +39,7 @@
             </tr>
             </thead>
             <tbody>
-            <%--<c:if test="${method_name != ''}"><h3>${method_name}</h3></c:if>--%>
+                <%--<c:if test="${method_name != ''}"><h3>${method_name}</h3></c:if>--%>
             <c:forEach items="${questionList}" var="question">
                 <tr>
                     <td>${question.message}</td>
@@ -47,20 +48,12 @@
                     <td>${question.answer}</td>
                     <td>${question.answerDate}</td>
                     <td>
-                        <form action="/add_answer" method="post">
-                            <input type="button" value="Ответить"/>
-                        </form>
-                        <form action="/modify_answer" method="post">
-                            <input type="button" value="Изменить"/>
-                        </form>
-                        <form action="/delete_answer" method="post">
-                            <input type="button" value="Удалить/>
-                        </form>
-                        <%--<form method="get" action="/add_answer">
-                            <input id="param1" type="submit" value="add" >
-                            <input id="param2" type="submit" value="modify">
-                            <input id="param3" type="submit" value="remove">
-                        </form>--%>
+                        <button onclick="setAttributes(${question.id}, 0); showPopupWindow();">Ответить</button>
+                        </br>
+                        <button onclick="setAttributes(${question.id}, 1); showPopupWindow();">Изменить</button>
+                        </br>
+                        <button windowCase = 2">Удалить</button>
+                        </br>
                     </td>
                 </tr>
             </c:forEach>
@@ -68,6 +61,19 @@
         </table>
     </c:if>
 </div>
-
+<div id="popupWindow">
+    <div class="messageBoxTitle">Добавление ответа</div>
+    <form:form accept-charset="utf-8" action="/update_question" commandName="question" method="GET">
+        <input id="questionId" name="questionId" type="hidden"/>
+        <input id="windowCase" name="windowCase" type="hidden"/>
+        <form:textarea class="messageBox" maxlength="255" rows="5"
+                       cols="50" path="answer"></form:textarea></br></br>
+        <input class="sendBtn" type="submit" value="Сохранить">
+        <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
+    </form:form>
+</div>
+<div id="overlay"/>
+<script src="/resources/js/answers.js"></script>
 </body>
 </html>
+</input>

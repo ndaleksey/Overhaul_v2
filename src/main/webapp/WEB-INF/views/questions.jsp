@@ -24,6 +24,7 @@
 
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
+    <link rel="script" type="">
 
 </head>
 <body>

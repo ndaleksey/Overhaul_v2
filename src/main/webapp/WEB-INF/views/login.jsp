@@ -33,11 +33,11 @@
         <table id="loginTable">
             <tr>
                 <td>Логин:</td>
-                <td><input id="adminLogin" maxlength="20" type="text" name="j_username"/></td>
+                <td><input id="adminLogin" maxlength="20" type="text" name="j_username" value="ivan"/></td>
             </tr>
             <tr>
                 <td>Пароль:</td>
-                <td><input id="adminPswd" maxlength="20" type="password" name="j_password"/></td>
+                <td><input id="adminPswd" maxlength="20" type="password" name="j_password" value="ivan"/></td>
             </tr>
             <tr>
                 <td align="right" colspan="2"><input id="sendBtn" type="submit" value="Войти"/></td>

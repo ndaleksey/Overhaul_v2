@@ -109,4 +109,10 @@ public class Question {
         result = 31 * result + (answerDate != null ? answerDate.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return String.format("id = %d, authorName = %s, message = %s, postDate = %tc, answer = %s, answerDate = %tc",
+                id, authorName, message, postDate, answer, answerDate);
+    }
 }

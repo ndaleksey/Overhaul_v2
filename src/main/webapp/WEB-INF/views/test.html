@@ -4,50 +4,18 @@
     <meta charset="UTF-8">
     <title>Тестовая страница</title>
 
-    <link rel="stylesheet" type="text/css" href="../resources/css/index.css"/>
-
-    <script type="text/javascript" src="/resources/js/jquery.leanModal.min.js"></script>
-
-    <style>
-        #popup_win {
-            width: 500px;
-            height: auto;
-            left: 50%;
-            top: 50%;
-            margin-left: -250px;
-            margin-top: -50px;
-            padding: 5px 20px;
-            position: fixed;
-            background: url("../resources/img/brickwall.png");
-            border-radius: 10px;
-            box-shadow: 10px 10px 10px #000;
-            opacity: 0.9;
-            z-index: 1000;
-        }
-        #inside_popup {
-            color: red;
-        }
-
-        #overlay {
-            opacity: 0.5;
-            background: url("../resources/img/binding_dark.png");
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: 999;
-        }
-    </style>
+    <!--<link rel="stylesheet" type="text/css" href="../resources/css/main.css"/>-->
+    <link rel="stylesheet" type="text/css" href="../../resources/css/main.css"/>
+    <!--<script type="text/javascript" src="/resources/js/jquery.leanModal.min.js"></script>-->
 </head>
-<body>
-<div id="popup_win">
-    <p id="inside_popup">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-    </p>
+<body onkeydown="keydown(event)">
+<div id="addAnswerWindow">
+    <div class="messageBoxTitle">Редактирование вопроса</div>
+    <form>
+        <textarea id="messageBox" maxlength="255" rows="5" cols="50"></textarea></br></br>
+        <input class="sendBtn" type="submit" value="Сохранить" align="right">
+        <input class="sendBtn" type="submit" value="Отмена" align="right"></br>
+    </form>
 </div>
 <div id="main" style="color: darkorange">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -57,7 +25,13 @@
         laborum.
     </p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    <!--<h3><a id="ref" href="" onclick="alert('123')">Click me</a></h3>-->
+
+    <form>
+        <input type="button" class="sendBtn" value="Click me"/>
+    </form>
+
+    <p onclick="foo()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
@@ -71,7 +45,7 @@
         laborum.
     </p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do`lore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
@@ -113,6 +87,7 @@
         laborum.
     </p>
 </div>
-<div id="overlay"/>
+<div id="overlay" onclick="closePopupWindow()"/>
+<script src="../../resources/js/answers.js"></script>
 </body>
 </html>
