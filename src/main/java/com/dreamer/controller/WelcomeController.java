@@ -105,17 +105,17 @@ public class WelcomeController {
     }
 
     @RequestMapping(value = "/update_question", method = RequestMethod.GET)
-    public String updateQuestion(@ModelAttribute("question") Question question, @RequestParam("questionId") String questionId) {
+    public String updateQuestion(@RequestParam("questionId") String questionId,
+                                 @RequestParam("answer") String answer) {
 
-        int id = Integer.parseInt(questionId);
-        Question question1 = questionService.getQuestionById(id);
-
-        question.setId(question1.getId());
-        question.setMessage(question1.getMessage());
-        question.setPostDate(question1.getPostDate());
-        question.setAuthorName(question1.getAuthorName());
-        question.setAnswerDate(new Timestamp(new Date().getTime()));
-        questionService.modifyQuestion(question);
+        if (!answer.trim().equals("")) {
+            int id = Integer.parseInt(questionId);
+            Question question = questionService.getQuestionById(id);
+            question.setAnswer(answer);
+            question.setAnswerDate(new Timestamp(new Date().getTime()));
+            System.out.println(question.getAnswer());
+            questionService.modifyQuestion(question);
+        }
 
         return "redirect:/answers";
     }

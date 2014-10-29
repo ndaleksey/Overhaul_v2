@@ -45,12 +45,12 @@
                     <td>${question.message}</td>
                     <td>${question.authorName}</td>
                     <td>${question.postDate}</td>
-                    <td>${question.answer}</td>
+                    <td id="answer">${question.answer}</td>
                     <td>${question.answerDate}</td>
                     <td>
-                        <button onclick="setAttributes(${question.id}, 0); showPopupWindow();">Ответить</button>
+                        <button onclick="setAttributes(${question.id}, 0);">Ответить</button>
                         </br>
-                        <button onclick="setAttributes(${question.id}, 1); showPopupWindow();">Изменить</button>
+                        <button onclick="setAttributes(${question.id}, 1, 'answer', 'answerBox');">Изменить</button>
                         </br>
                         <button windowCase = 2">Удалить</button>
                         </br>
@@ -63,14 +63,21 @@
 </div>
 <div id="popupWindow">
     <div class="messageBoxTitle">Добавление ответа</div>
-    <form:form accept-charset="utf-8" action="/update_question" commandName="question" method="GET">
+    <%--<form:form cssStyle="display: inline;" accept-charset="utf-8" action="/update_question" commandName="question" method="GET">
         <input id="questionId" name="questionId" type="hidden"/>
         <input id="windowCase" name="windowCase" type="hidden"/>
         <form:textarea class="messageBox" maxlength="255" rows="5"
                        cols="50" path="answer"></form:textarea></br></br>
         <input class="sendBtn" type="submit" value="Сохранить">
+    </form:form>--%>
+    <form style="display: inline;" accept-charset="utf-8" action="/update_question" method="GET">
+        <input id="questionId" name="questionId" type="hidden"/>
+        <input id="windowCase" name="windowCase" type="hidden"/>
+        <textarea id="answerBox" name="answer" class="messageBox" maxlength="255" rows="5"
+                       cols="50" path="answer" content="Hello"></textarea></br></br>
+        <input class="sendBtn" type="submit" value="Сохранить">
         <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
-    </form:form>
+    </form>
 </div>
 <div id="overlay"/>
 <script src="/resources/js/answers.js"></script>

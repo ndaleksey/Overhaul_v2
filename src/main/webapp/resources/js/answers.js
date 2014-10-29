@@ -14,12 +14,20 @@ function keydown(e) {
     }
 }
 
-function setAttributes(questionId, windowCase) {
-    _questionId = questionId;
-    _windowCase = windowCase;
+function setAttributes(questionId, windowCase, srcElemName, dstElemName) {
+    alert('setAttributes');
+//    _questionId = questionId;
+//    _windowCase = windowCase;
 
-    console.log('questionId = ' + _questionId);
-    console.log('windowCase = ' + _windowCase);
+//    console.log(srcElemName);
+//    console.log(dstElemName);
+
+//    if (srcElemName != null && dstElemName != null) {
+//        console.log('inside condition');
+//        document.getElementById(dstElemName).innerText = document.getElementById(srcElemName).innerText;
+//        console.log(document.getElementById(dstElemName).innerText);
+//        console.log(document.getElementById(srcElemName).innerText);
+//    }
 }
 
 function getWindowCase() {
@@ -32,9 +40,7 @@ function showPopupWindow() {
 
 //    document.getElementById('questionId').setAttribute('value', _questionId);
 
-    console.log(_questionId);
     document.getElementById('questionId').setAttribute('value', _questionId);
-    console.log(document.getElementById('questionId'));
 
     document.getElementById('popupWindow').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
