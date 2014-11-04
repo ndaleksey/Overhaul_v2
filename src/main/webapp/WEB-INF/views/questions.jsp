@@ -43,7 +43,7 @@
     </div>
     <div>
         <c:if test="${!empty questionList}">
-            <table>
+            <table border="1">
                 <tbody>
                 <c:forEach items="${questionList}" var="question">
                     <tr>
@@ -57,14 +57,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tdAnswer" align="right" colspan="2">
-                            <div class="answer">Своими руками или можете воспользоваться услугами нашей фирмы</div>
-                        </td>
-                        <td class="tdAvatar">
-                            <div class="adminAvatar"></div>
-                            <div class="authorName">Админ</div>
-                            <div class="postDate">01.01.2014</div>
-                        </td>
+                        <c:choose>
+                            <c:when test="${not empty question.answer}">
+                                <td class="tdAnswer" align="right" colspan="2">
+                                    <div class="answer">${question.answer}</div>
+                                </td>
+                                <td class="tdAvatar">
+                                    <div class="adminAvatar"></div>
+                                    <div class="authorName">Админ</div>
+                                    <div class="postDate">${question.answerDate}</div>
+                                </td>
+                            </c:when>
+                            <c:otherwise>
+                                <td colspan="3"></td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr class="emptyRow">
                         <td colspan="3"></td>
@@ -81,8 +88,8 @@
         <br>
         <form:form acceptCharset="UTF-8" id="messageForm" action="/add_question" commandName="question" method="POST">
             Ваше имя:<form:input id="nickBox" maxlength="20" path="authorName"/><br>
-            Сообщение:<br/><form:textarea id="messageBox" rows="6" cols="50" maxlength="255" path="message"/><br/>
-            <input id="sendBtn" type="submit" value="Добавить вопрос"
+            Сообщение:<br/><form:textarea class="messageBox" rows="6" cols="50" maxlength="255" path="message"/><br/>
+            <input class="sendBtn" type="submit" value="Добавить вопрос"
                    onclick="javascript:document.all.abottom.scrollIntoView(true)">
         </form:form>
     </div>

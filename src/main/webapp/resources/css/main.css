@@ -110,7 +110,7 @@ body {
     color: goldenrod;
     font-family: "Comic Sans MS";
     /*font-size: 24;*/
-    font-size: 0.55cm;
+    font-size: 0.4cm;
     font-weight: bold;
 }
 
@@ -343,7 +343,7 @@ table#loginTable {
     padding: 10px;
 }
 
-#popupWindow {
+#popupWindow, #confirmWindow  {
     width: 500px;
     height: auto;
     left: 50%;

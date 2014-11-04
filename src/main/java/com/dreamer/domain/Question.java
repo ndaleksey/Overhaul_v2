@@ -63,11 +63,11 @@ public class Question {
     @Basic
     @Column(name = "answer")
     public String getAnswer() {
-        return answer;
+        return answer.replaceAll("'", "&apos;");
     }
 
     public void setAnswer(String answer) {
-        this.answer = answer;
+        this.answer = answer.replaceAll("'", "&apos;");
     }
 
     @Basic

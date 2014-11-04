@@ -12,10 +12,11 @@
 <div id="addAnswerWindow">
     <div class="messageBoxTitle">Редактирование вопроса</div>
     <form>
-        <textarea id="messageBox" maxlength="255" rows="5" cols="50"></textarea></br></br>
+        <textarea class="messageBox" maxlength="255" rows="5" cols="50"></textarea></br></br>
         <input class="sendBtn" type="submit" value="Сохранить" align="right">
         <input class="sendBtn" type="submit" value="Отмена" align="right"></br>
     </form>
+    <button onclick="foo('${message}')">Test</button>
 </div>
 <div id="main" style="color: darkorange">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -88,6 +89,6 @@
     </p>
 </div>
 <div id="overlay" onclick="closePopupWindow()"/>
-<script src="../../resources/js/answers.js"></script>
+<script src="../../resources/js/test.js"></script>
 </body>
 </html>

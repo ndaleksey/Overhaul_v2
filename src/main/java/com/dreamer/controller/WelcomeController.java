@@ -104,7 +104,7 @@ public class WelcomeController {
         return "answers";
     }
 
-    @RequestMapping(value = "/update_question", method = RequestMethod.GET)
+    @RequestMapping(value = "/update_question", method = RequestMethod.POST)
     public String updateQuestion(@RequestParam("questionId") String questionId,
                                  @RequestParam("answer") String answer) {
 
@@ -126,7 +126,16 @@ public class WelcomeController {
 //        model.addAttribute("question", question);
 
         model.addAttribute("questionList", questionService.listQuestion());
-        return "answers";
+        return "redirect:/answers";
+    }
+
+    @RequestMapping(value = "/delete_question")
+    public String deleteQuestion(@RequestParam("questionId") String questionId) {
+        if (!questionId.trim().equals("")) {
+            questionService.deleteQuestionById(Integer.parseInt(questionId));
+        }
+
+        return "redirect:/answers";
     }
 
     /*@RequestMapping(value = "/questions")

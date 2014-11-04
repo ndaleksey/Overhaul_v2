@@ -22,6 +22,16 @@ public class QuestionDAOImpl implements QuestionDAO {
     }
 
     @Override
+    public void deleteQuestionById(int id) {
+        sessionFactory.getCurrentSession().delete(getQuestionById(id));
+    }
+
+    @Override
+    public void deleteQuestion(Question question) {
+        sessionFactory.getCurrentSession().delete(question);
+    }
+
+    @Override
     public void modifyQuestion(Question question) {
         sessionFactory.getCurrentSession().update(question);
     }

@@ -1,3 +1,4 @@
+<%@ page import="org.springframework.web.util.HtmlUtils" %>
 <%--
   Created by IntelliJ IDEA.
   User: ND
@@ -9,6 +10,7 @@
 <%@ page pageEncoding="CP1251" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -48,11 +50,15 @@
                     <td id="answer">${question.answer}</td>
                     <td>${question.answerDate}</td>
                     <td>
-                        <button onclick="setAttributes(${question.id}, 0);">Ответить</button>
+                        <button onclick="setAttributes(${question.id}); showPopupWindow()">Ответить</button>
                         </br>
-                        <button onclick="setAttributes(${question.id}, 1, 'answer', 'answerBox');">Изменить</button>
+                        <%--<button onclick="setAttributes(${question.id}, 'answerBox', '${HtmlUtils.htmlEscape(question.answer)}'); showPopupWindow()">--%>
+
+                        <button onclick="setAttributes(${question.id}, 'answerBox', '${fn:escapeXml(question.answer)}'); showPopupWindow()">
+                            Изменить
+                        </button>
                         </br>
-                        <button windowCase = 2">Удалить</button>
+                        <button onclick="setAttributes(${question.id}); showConfirmWindow()">Удалить</button>
                         </br>
                     </td>
                 </tr>
@@ -63,22 +69,24 @@
 </div>
 <div id="popupWindow">
     <div class="messageBoxTitle">Добавление ответа</div>
-    <%--<form:form cssStyle="display: inline;" accept-charset="utf-8" action="/update_question" commandName="question" method="GET">
+    <form style="display: inline;" accept-charset="utf-8" action="/update_question" method="POST">
         <input id="questionId" name="questionId" type="hidden"/>
-        <input id="windowCase" name="windowCase" type="hidden"/>
-        <form:textarea class="messageBox" maxlength="255" rows="5"
-                       cols="50" path="answer"></form:textarea></br></br>
-        <input class="sendBtn" type="submit" value="Сохранить">
-    </form:form>--%>
-    <form style="display: inline;" accept-charset="utf-8" action="/update_question" method="GET">
-        <input id="questionId" name="questionId" type="hidden"/>
-        <input id="windowCase" name="windowCase" type="hidden"/>
         <textarea id="answerBox" name="answer" class="messageBox" maxlength="255" rows="5"
-                       cols="50" path="answer" content="Hello"></textarea></br></br>
+                  cols="50" path="answer" content="Hello"></textarea></br></br>
         <input class="sendBtn" type="submit" value="Сохранить">
-        <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
     </form>
+    <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
 </div>
+
+<div id="confirmWindow">
+    <div class="messageBoxTitle">Вы действительно хотите удалить запись</div>
+    <form style="display: inline;" accept-charset="utf-8" action="/delete_question" method="POST">
+        <input id="questionIdDelete" name="questionId" type="hidden"/>
+        <input class="sendBtn" type="submit" value="Да">
+    </form>
+    <button class="sendBtn" onclick="closeConfirmWindow()">Нет</button>
+</div>
+
 <div id="overlay"/>
 <script src="/resources/js/answers.js"></script>
 </body>

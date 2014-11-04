@@ -43,3 +43,7 @@ function closePopup() {
     document.getElementById('popupWindow').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
+
+function foo(param) {
+    console.log(param)
+}

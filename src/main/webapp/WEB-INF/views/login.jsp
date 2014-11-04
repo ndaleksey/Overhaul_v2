@@ -40,7 +40,7 @@
                 <td><input id="adminPswd" maxlength="20" type="password" name="j_password" value="ivan"/></td>
             </tr>
             <tr>
-                <td align="right" colspan="2"><input id="sendBtn" type="submit" value="Войти"/></td>
+                <td align="right" colspan="2"><input class="sendBtn" type="submit" value="Войти"/></td>
             </tr>
         </table>
     </form>

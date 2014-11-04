@@ -25,6 +25,18 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Transactional
     @Override
+    public void deleteQuestionById(int id) {
+        questionDAO.deleteQuestionById(id);
+    }
+
+    @Transactional
+    @Override
+    public void deleteQuestion(Question question) {
+        questionDAO.deleteQuestion(question);
+    }
+
+    @Transactional
+    @Override
     public void modifyQuestion(Question question) {
         questionDAO.modifyQuestion(question);
     }
