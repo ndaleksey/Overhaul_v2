@@ -19,7 +19,4 @@ public interface QuestionService {
     List<Question> listQuestion();
 
     Question getQuestionById(int id);
-
-    void removeQuestion(int id);
-
 }

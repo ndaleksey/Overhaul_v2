@@ -6,29 +6,51 @@
     <title>Заявка</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css" href="../resources/css/index.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../resources/css/main.css"/>
 </head>
 <body>
-<form id="messageForm">
-    Имя:<input id="nickBox" type="text" maxlength="20"><br/>
-    Адрес:
-    Сообщение:<br/><textarea class="messageBox" rows="6" cols="50" maxlength="255"></textarea><br/>
-    <input class="sendBtn" type="submit" value="Отправить">
-</form>
-
-<!--<div class="messageBox">
-    <div class="question"><br/><br/><br/></div>
-    <div class="answer"><br/><br/><br/><br/></div>
+<div id="main">
+    <form id="messageForm">
+        <h1 style="text-align: center">Заполните данные заявки:</h1>
+        <table border="0">
+            <tr>
+                <td class="request">Имя:</td>
+                <td><input class="editBox" type="text" maxlength="30"><br/></td>
+            </tr>
+            <tr>
+                <td class="request">E-mail:</td>
+                <td><input class="editBox" type="text" maxlength="20"><br/></td>
+            </tr>
+            <tr>
+                <td class="request">Адрес:</td>
+                <td><input class="editBox" type="text" maxlength="20"><br/></td>
+            </tr>
+            <tr>
+                <td class="request">Телефон:</td>
+                <td><input class="editBox" type="text" maxlength="20"><br/></td>
+            </tr>
+            <tr>
+                <td class="request">Площадь, м<sup>2</sup>:</td>
+                <td><input class="editBox" type="text" maxlength="20"><br/></td>
+            </tr>
+            <tr>
+                <td class="request">Количество комнат:</td>
+                <td><input class="editBox" type="text" maxlength="20"><br/></td>
+            </tr>
+            <tr>
+                <td class="request" style="vertical-align: top">Сообщение:</td>
+                <td>
+                    <textarea class="messageBox" style="margin-left: 10px" rows="6" cols="40"
+                              maxlength="255"></textarea><br/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="request">
+                    <input class="sendBtn" style="margin-right: 0" type="submit" value="Отправить">
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
-<div class="messageBox">
-    <div class="question"><br/><br/><br/><br/></div>
-    <div class="answer"><br/><br/></div>
-</div>
-<div class="messageBox">
-    <div class="question"><br/><br/><br/></div>
-    <div class="answer"><br/><br/><br/></div>
-</div>-->
 </body>
 </html>

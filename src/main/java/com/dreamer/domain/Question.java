@@ -1,15 +1,13 @@
 package com.dreamer.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Created by Shishkov A.V. on 15.10.2014.
  */
 @Entity
+@Table(name = "question", schema = "", catalog = "overhaul")
 public class Question {
     private int id;
     private String authorName;

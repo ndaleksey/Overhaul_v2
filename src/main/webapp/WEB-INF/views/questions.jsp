@@ -43,7 +43,7 @@
     </div>
     <div>
         <c:if test="${!empty questionList}">
-            <table border="1">
+            <table>
                 <tbody>
                 <c:forEach items="${questionList}" var="question">
                     <tr>

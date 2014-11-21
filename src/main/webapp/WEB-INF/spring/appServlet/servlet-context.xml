@@ -39,6 +39,7 @@
         <beans:property name="annotatedClasses">
             <beans:list>
                 <beans:value>com.dreamer.domain.Question</beans:value>
+                <beans:value>com.dreamer.domain.Order</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">

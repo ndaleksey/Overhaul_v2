@@ -13,47 +13,38 @@ import java.util.List;
 @Repository
 public class QuestionDAOImpl implements QuestionDAO {
 
-   @Autowired
-    private SessionFactory sessionFactory;
+	@Autowired
+	private SessionFactory sessionFactory;
 
-    @Override
-    public void addQuestion(Question question) {
-        sessionFactory.getCurrentSession().save(question);
-    }
+	@Override
+	public void addQuestion(Question question) {
+		sessionFactory.getCurrentSession().save(question);
+	}
 
-    @Override
-    public void deleteQuestionById(int id) {
-        sessionFactory.getCurrentSession().delete(getQuestionById(id));
-    }
+	@Override
+	public void deleteQuestionById(int id) {
+		sessionFactory.getCurrentSession().delete(getQuestionById(id));
+	}
 
-    @Override
-    public void deleteQuestion(Question question) {
-        sessionFactory.getCurrentSession().delete(question);
-    }
+	@Override
+	public void deleteQuestion(Question question) {
+		sessionFactory.getCurrentSession().delete(question);
+	}
 
-    @Override
-    public void modifyQuestion(Question question) {
-        sessionFactory.getCurrentSession().update(question);
-    }
+	@Override
+	public void modifyQuestion(Question question) {
+		sessionFactory.getCurrentSession().update(question);
+	}
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Question> listQuestion() {
-        return sessionFactory.getCurrentSession().createQuery("from Question").list();
-    }
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Question> listQuestion() {
+		return sessionFactory.getCurrentSession().createQuery("from Question").list();
+	}
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public Question getQuestionById(int id) {
-        return (Question) sessionFactory.getCurrentSession().createQuery("from Question where id = :id").setParameter("id", id).list().get(0);
-    }
-
-    @Override
-    public void removeQuestion(int id) {
-        Question question = (Question) sessionFactory.getCurrentSession().load(Question.class, id);
-
-        if (question != null) {
-            sessionFactory.getCurrentSession().delete(question);
-        }
-    }
+	@SuppressWarnings("unchecked")
+	@Override
+	public Question getQuestionById(int id) {
+		return (Question) sessionFactory.getCurrentSession().createQuery("from Question where id = :id").setParameter("id", id).list().get(0);
+	}
 }

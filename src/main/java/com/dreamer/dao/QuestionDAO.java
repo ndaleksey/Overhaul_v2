@@ -20,6 +20,4 @@ public interface QuestionDAO {
     List<Question> listQuestion();
 
     Question getQuestionById(int id);
-
-    void removeQuestion(int id);
 }

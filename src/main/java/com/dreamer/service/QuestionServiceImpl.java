@@ -52,10 +52,4 @@ public class QuestionServiceImpl implements QuestionService {
     public Question getQuestionById(int id) {
         return questionDAO.getQuestionById(id);
     }
-
-    @Transactional
-    @Override
-    public void removeQuestion(int id) {
-        questionDAO.removeQuestion(id);
-    }
 }

@@ -28,7 +28,7 @@
     <!-- Attach necessary scripts -->
     <script src="<c:url value="/resources/js/jquery-1.4.1.min.js"/>"></script>
     <script src="<c:url value="/resources/js/jquery.orbit.js"/>"></script>
-    <script src="<c:url value="/resources/js/jquery.orbit.min.js"/>"></script>
+    <%--<script src="<c:url value="/resources/js/jquery.orbit.min.js"/>"></script>--%>
 
     <!-- Run the plugin -->
     <script type="text/javascript">

@@ -7,15 +7,18 @@
  */
 
 
+
+
 (function ($) {
 
     $.fn.orbit = function (options) {
+
 
         //Yo' defaults
         var defaults = {
             animation: 'fade', //fade, horizontal-slide, vertical-slide
             animationSpeed: 800, //how fast animtions are
-            advanceSpeed: 4000, //if auto advance is enabled, time between transitions
+            advanceSpeed: 3000, //if auto advance is enabled, time between transitions
             startClockOnMouseOut: true, //if clock should start on MouseOut
             startClockOnMouseOutAfter: 3000, //how long after mouseout timer should start again
             directionalNav: true, //manual advancing directional navs
@@ -29,13 +32,15 @@
         var options = $.extend(defaults, options);
 
         return this.each(function () {
-            console.log("inside");
+
             //important global goodies
             var activeImage = 0;
             var numberImages = 0;
             var orbitWidth;
             var orbitHeight;
             var locked;
+
+            console.log('in each');
 
             //Grab each Shifter and add the class
             var orbit = $(this).addClass('orbit')
@@ -72,7 +77,8 @@
                     var clock;
 
                     function startClock() {
-                        console.log("Hello");
+                        console.log('start clock');
+
                         timerRunning = true;
                         pause.removeClass('active')
                         clock = setInterval(function (e) {
@@ -248,18 +254,10 @@
                         setActiveBullet();
                     }
 
-
-                    console.log("out text");
-
                     //fade
                     if (options.animation == "fade") {
 
-                        orbit.width(images.eq(prevActiveImage).width());
-                        orbitWidth = orbit.width();
-                        orbit.height(images.eq(prevActiveImage).height());
-                        orbitHeight = orbit.height();
-
-                        images.eq(prevActiveImage).css({"opacity": 1, "z-index": 1})
+                        images.eq(prevActiveImage).css({"opacity": 1, "z-index": 3})
                             .animate({"opacity": 0}, options.animationSpeed, resetAndUnlock);
 
                         orbit.width(images.eq(activeImage).width());
@@ -267,42 +265,45 @@
                         orbit.height(images.eq(activeImage).height());
                         orbitHeight = orbit.height();
 
-                        images.eq(activeImage).css({"opacity": 0, "z-index": 2})
+                        images.eq(activeImage).css({"opacity": 0, "z-index": 3})
                             .animate({"opacity": 1}, options.animationSpeed, resetAndUnlock);
                         if (options.captions) {
                             setCaption();
                         }
                     }
-                    /*//horizontal-slide
-                     if (options.animation == "horizontal-slide") {
-                     images.eq(prevActiveImage).css({"z-index": 2});
-                     if (slideDirection == "next") {
-                     images.eq(activeImage).css({"left": orbitWidth, "z-index": 3})
-                     .animate({"left": 0}, options.animationSpeed, resetAndUnlock);
-                     }
-                     if (slideDirection == "prev") {
-                     images.eq(activeImage).css({"left": -orbitWidth, "z-index": 3})
-                     .animate({"left": 0}, options.animationSpeed, resetAndUnlock);
-                     }
-                     if (options.captions) {
-                     setCaption();
-                     }
-                     }
-                     //vertical-slide
-                     if (options.animation == "vertical-slide") {
-                     images.eq(prevActiveImage).css({"z-index": 2});
-                     if (slideDirection == "prev") {
-                     images.eq(activeImage).css({"top": orbitHeight, "z-index": 3})
-                     .animate({"top": 0}, options.animationSpeed, resetAndUnlock);
-                     }
-                     if (slideDirection == "next") {
-                     images.eq(activeImage).css({"top": -orbitHeight, "z-index": 3})
-                     .animate({"top": 0}, options.animationSpeed, resetAndUnlock);
-                     }
-                     if (options.captions) {
-                     setCaption();
-                     }
-                     }*/
+                    //horizontal-slide
+                    if (options.animation == "horizontal-slide") {
+                        images.eq(prevActiveImage).css({"z-index": 2});
+                        if (slideDirection == "next") {
+                            console.log(orbitWidth);
+                            console.log(orbitHeight);
+                            console.log();
+                            images.eq(activeImage).css({"left": orbitWidth, "z-index": 3})
+                                .animate({"left": 0}, options.animationSpeed, resetAndUnlock);
+                        }
+                        if (slideDirection == "prev") {
+                            images.eq(activeImage).css({"left": -orbitWidth, "z-index": 3})
+                                .animate({"left": 0}, options.animationSpeed, resetAndUnlock);
+                        }
+                        if (options.captions) {
+                            setCaption();
+                        }
+                    }
+                    //vertical-slide
+                    if (options.animation == "vertical-slide") {
+                        images.eq(prevActiveImage).css({"z-index": 2});
+                        if (slideDirection == "prev") {
+                            images.eq(activeImage).css({"top": orbitHeight, "z-index": 3})
+                                .animate({"top": 0}, options.animationSpeed, resetAndUnlock);
+                        }
+                        if (slideDirection == "next") {
+                            images.eq(activeImage).css({"top": -orbitHeight, "z-index": 3})
+                                .animate({"top": 0}, options.animationSpeed, resetAndUnlock);
+                        }
+                        if (options.captions) {
+                            setCaption();
+                        }
+                    }
                 } //lock
             }//orbit function
         });//each call
