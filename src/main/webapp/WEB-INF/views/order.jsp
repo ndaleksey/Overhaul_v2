@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page pageEncoding="CP1251" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
@@ -18,51 +18,72 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Заявка</title>
+    <title>Р—Р°СЏРІРєР°</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
+    <script type="text/javascript" src="/resources/js/all.js"></script>
 </head>
+<script>
+    $(function () {
+        $("#roomsNumber").numberMask({beforePoint: 3});
+        $("#flatSquare").numberMask({type: 'float', afterPoint: 2, defaultValue: '0.0', decimalMark: '.'});
+    });
+
+    function validateOrder() {
+        console.log(document.getElementById('roomsNumber').value == '0' ? alert("Wrong RoomsNumber") :
+                document.getElementById("messageForm").submit());
+    }
+
+    /*$(function() {
+//        $("messageForm").submit().acceptData($("roomsNumber").eq(0))
+       $("messageForm").onsubmit = function() {
+           console.log($("roomsNumber").value == 0 ? false : true);
+           return $("roomsNumber").value == 0 ? false : true;
+       }
+    });*/
+</script>
 <div id="main">
-    <h1 style="text-align: center">Заполните данные заявки:</h1>
     <form:form acceptCharset="UTF-8" id="messageForm" action="/add_order" commandName="order" method="POST">
+        <h1 style="text-align: center">Р—Р°РїРѕР»РЅРёС‚Рµ РґР°РЅРЅС‹Рµ Р·Р°СЏРІРєРё:</h1>
         <table border="0">
             <tr>
-                <td class="request">Имя:</td>
-                <td><form:input class="editBox" type="text" maxlength="30" path="clinet_name"/><br/></td>
+                <td class="request">РРјСЏ:</td>
+                <td><form:input class="editBox" type="text" maxlength="30" path="clientName"/></td>
             </tr>
             <tr>
                 <td class="request">E-mail:</td>
-                <td><form:input class="editBox" type="text" maxlength="20" path="e_mail"/><br/></td>
+                <td><form:input class="editBox" type="text" maxlength="20" path="eMail"/></td>
             </tr>
             <tr>
-                <td class="request">Адрес:</td>
-                <td><form:input class="editBox" type="text" maxlength="20" path="address"/><br/></td>
+                <td class="request">РђРґСЂРµСЃ:</td>
+                <td><form:input class="editBox" type="text" maxlength="20" path="address"/></td>
             </tr>
             <tr>
-                <td class="request">Телефон:</td>
-                <td><form:input class="editBox" type="text" maxlength="20" path="phone_number"/><br/></td>
+                <td class="request">РўРµР»РµС„РѕРЅ:</td>
+                <td><form:input class="editBox" type="text" maxlength="20" path="phoneNumber"/></td>
             </tr>
             <tr>
-                <td class="request">Площадь, м<sup>2</sup>:</td>
-                <td><form:input class="editBox" type="text" maxlength="20" path="flat_square"/><br/></td>
+                <td class="request">РџР»РѕС‰Р°РґСЊ, Рј<sup>2</sup>:</td>
+                <td><form:input id="flatSquare" class="editBox" type="text" maxlength="20" path="flatSquare"/></td>
             </tr>
             <tr>
-                <td class="request">Количество комнат:</td>
-                <td><form:input class="editBox" type="text" maxlength="20" path="rooms_number"/><br/></td>
+                <td int="roomsNumber" class="request">РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРЅР°С‚:</td>
+                <td><form:input class="editBox" type="text" maxlength="20" path="roomsNumber"/></td>
             </tr>
             <tr>
-                <td class="request" style="vertical-align: top">Сообщение:</td>
+                <td class="request" style="vertical-align: top">РЎРѕРѕР±С‰РµРЅРёРµ:</td>
                 <td>
                     <form:textarea class="messageBox" style="margin-left: 10px" rows="6" cols="40"
-                              maxlength="255" path="message"></form:textarea><br/>
+                                   maxlength="255" path="message"></form:textarea>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="request">
-                    <input class="sendBtn" style="margin-right: 0" type="submit" value="Отправить">
+                    <input class="sendBtn" style="margin-right: 0" type="button" value="Send"
+                           onclick="validateOrder()">
                 </td>
             </tr>
         </table>

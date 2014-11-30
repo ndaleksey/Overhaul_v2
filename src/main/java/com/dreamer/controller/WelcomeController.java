@@ -143,15 +143,22 @@ public class WelcomeController {
 		return "redirect:/answers";
 	}
 
-	@RequestMapping(value = "/request")
+	@RequestMapping(value = "/order")
 	public String request(ModelMap model) {
 		Order order = new Order();
-		model.addAttribute("request", order);
-		return "request";
+		model.addAttribute("order", order);
+		return "order";
 	}
 
-	@RequestMapping(value = "add_order")
-	public void addRequest(@RequestParam("request")Order order) {
+	@RequestMapping(value = "/add_order", method = RequestMethod.POST)
+	public String addRequest(@ModelAttribute("order") Order order) {
+		order.setOrderDate(new Timestamp(new Date().getTime()));
 		orderService.addOrder(order);
+		return "redirect:/order";
+	}
+	@RequestMapping(value = "/orders")
+	public String orders(ModelMap model) {
+		model.addAttribute("orderList", orderService.listOrder());
+		return "orders";
 	}
 }

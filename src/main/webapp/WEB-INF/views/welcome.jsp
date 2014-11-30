@@ -51,7 +51,7 @@
     </div>
     <div id="example_photos"></div>
     <!--<div id="btn4"></div>-->
-    <a href="#" id="btn4"></a>
+    <a href="order" id="btn4"></a>
 
     <div id="contacts">
         <p style="color: darkorange; font-weight: bold; font-size: 0.6cm">Контакты:</p>

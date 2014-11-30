@@ -26,6 +26,7 @@
 
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
+    <title>Заявка</title>
 </head>
 <body onkeydown="keydown(event)">
 <div id="main">

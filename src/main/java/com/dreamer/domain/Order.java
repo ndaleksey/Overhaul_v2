@@ -1,6 +1,7 @@
 package com.dreamer.domain;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
  * Created by Shishkov A.V. on 21.11.2014.
@@ -16,6 +17,7 @@ public class Order {
 	private int roomsNumber;
 	private String message;
 	private String phoneNumber;
+	private Timestamp orderDate;
 
 	@Id
 	@Column(name = "id")
@@ -39,11 +41,11 @@ public class Order {
 
 	@Basic
 	@Column(name = "e_mail")
-	public String geteMail() {
+	public String getEMail() {
 		return eMail;
 	}
 
-	public void seteMail(String eMail) {
+	public void setEMail(String eMail) {
 		this.eMail = eMail;
 	}
 
@@ -85,6 +87,16 @@ public class Order {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	@Basic
+	@Column(name = "order_date")
+	public Timestamp getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Timestamp orderDate) {
+		this.orderDate = orderDate;
 	}
 
 	@Basic

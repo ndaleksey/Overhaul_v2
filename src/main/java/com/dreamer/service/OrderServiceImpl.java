@@ -23,26 +23,31 @@ public class OrderServiceImpl implements OrderService {
 		orderDAO.addOrder(order);
 	}
 
+	@Transactional
 	@Override
 	public void deleteOrderById(int id) {
 		orderDAO.deleteOrderById(id);
 	}
 
+	@Transactional
 	@Override
 	public void deleteOrder(Order order) {
 		orderDAO.deleteOrder(order);
 	}
 
+	@Transactional
 	@Override
 	public void modifyOrder(Order order) {
 		orderDAO.modifyOrder(order);
 	}
 
+	@Transactional
 	@Override
 	public List<Order> listOrder() {
 		return orderDAO.listOrder();
 	}
 
+	@Transactional
 	@Override
 	public Order getOrderById(int id) {
 		return orderDAO.getOrderById(id);

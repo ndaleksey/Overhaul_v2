@@ -298,12 +298,12 @@ td.tdAvatar {
 #messageForm {
     color: darkorange;
     font: "Comic Sans MS" 12pt bold;
-    background:url("../img/binding_dark.png");
+    background: url("../img/binding_dark.png");
     padding: 10px 10px 30px;
     font-size: 14pt;
 }
 
-#nickBox, #adminLogin, #adminPswd, #editBox {
+#nickBox, #adminLogin, #adminPswd {
     border-radius: 10px;
     padding: 5px;
     margin-left: 10px;
@@ -343,7 +343,7 @@ table#loginTable {
     padding: 10px;
 }
 
-#popupWindow, #confirmWindow  {
+#popupWindow, #confirmWindow {
     width: 500px;
     height: auto;
     left: 50%;
@@ -378,4 +378,12 @@ table#loginTable {
     font-size: 18pt;
     display: inline-block;
     margin-bottom: 10px;
+}
+
+.editBox {
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    background: url("../img/brickwall.png");
+    color: darkblue;
 }
