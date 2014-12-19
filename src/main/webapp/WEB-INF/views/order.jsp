@@ -24,7 +24,7 @@
 
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
-    <script type="text/javascript" src="/resources/js/all.js"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/all.js"/>"></script>
 </head>
 <script>
     $(function () {
@@ -33,10 +33,9 @@
     });
 
     function validateOrder() {
-        console.log(document.getElementById('roomsNumber').value == '0' ? alert("Wrong RoomsNumber") :
-                document.getElementById("messageForm").submit());
+        document.getElementById('roomsNumber').value == '0' ? alert("Количество комнат не может быть равно 0!") :
+                document.getElementById("messageForm").submit();
     }
-
     /*$(function() {
 //        $("messageForm").submit().acceptData($("roomsNumber").eq(0))
        $("messageForm").onsubmit = function() {
@@ -46,7 +45,14 @@
     });*/
 </script>
 <div id="main">
-    <form:form acceptCharset="UTF-8" id="messageForm" action="/add_order" commandName="order" method="POST">
+    <div id="header"></div>
+    <div id="mainmenu">
+        <a href="welcome" id="btn1"></a><!--
+                --><a href="examples" id="btn2"></a><!--
+                --><a href="questions" id="btn3"></a>
+    </div>
+
+    <form:form acceptCharset="UTF-8" id="messageForm" action="add_order" commandName="order" method="POST">
         <h1 style="text-align: center">Заполните данные заявки:</h1>
         <table border="0">
             <tr>
@@ -82,12 +88,16 @@
             </tr>
             <tr>
                 <td colspan="2" class="request">
-                    <input class="sendBtn" style="margin-right: 0" type="button" value="Send"
+                    <input class="sendBtn" style="margin-right: 0" type="button" value="Отправить"
                            onclick="validateOrder()">
                 </td>
             </tr>
         </table>
     </form:form>
+    <div id="overlay">
+        <div class="messageBoxTitle">Ваша заявка принята</div>
+    </div>
 </div>
+<script src="<c:url value="/resources/js/answers.js"/>"></script>
 </body>
 </html>

@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Overhaul" uuid="9f9044c8-da3d-45e8-8259-cc234a416234">
-    <database-info product="MySQL" version="5.6.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+  <data-source name="Overhaul" uuid="9f9044c8-da3d-45e8-8259-cc234a416234">
+    <database-info product="MySQL" version="5.6.22" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="overhaul"/>
-    <table name="question" schema="" catalog="overhaul" type="TABLE">
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="Overhaul"/>
+    <table name="question" schema="" catalog="Overhaul" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="author_name" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="message" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="post_date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="answer" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="answer_date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="answer_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="author_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="message" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="post_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="user_order" schema="" catalog="overhaul" type="TABLE">
+    <table name="user_order" schema="" catalog="Overhaul" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="client_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="e_mail" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="flat_square" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <column name="rooms_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="client_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="flat_square" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
       <column name="message" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="order_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="phone_number" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="order_date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="rooms_number" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <index name="unique_id" unique="true" columns="id"/>
     </table>
   </data-source>
 </component>

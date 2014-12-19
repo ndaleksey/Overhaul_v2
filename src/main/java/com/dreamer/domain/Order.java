@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Shishkov A.V. on 21.11.2014.
  */
 @Entity
-@Table(name = "user_order", schema = "", catalog = "overhaul")
+@Table(name = "user_order", schema = "", catalog = "Overhaul")
 public class Order {
 	private int id;
 	private String clientName;
@@ -20,7 +20,8 @@ public class Order {
 	private Timestamp orderDate;
 
 	@Id
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false, unique = true)
 	public int getId() {
 		return id;
 	}

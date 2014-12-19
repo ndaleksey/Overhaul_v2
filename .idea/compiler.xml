@@ -25,6 +25,8 @@
         <module name="Overhaul_v2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Overhaul_v2" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-

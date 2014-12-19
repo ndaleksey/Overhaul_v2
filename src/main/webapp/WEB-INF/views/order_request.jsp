@@ -5,8 +5,8 @@
   Time: 14:48
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=windows-1251" %>
-<%@ page pageEncoding="CP1251" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -17,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Заявка</title>
+    <title>Р—Р°СЏРІРєР°</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,36 +37,36 @@
         <form id="order_form" method="post" action="add_question" commandName="question">
             <table>
                 <tr>
-                    <td>Ваше имя:</td>
-                    <td><input class="textbox" type="text" value="Алексей" maxlength="100"><br></td>
+                    <td>Р’Р°С€Рµ РёРјСЏ:</td>
+                    <td><input class="textbox" type="text" value="РђР»РµРєСЃРµР№" maxlength="100"><br></td>
                 </tr>
                 <tr>
                     <td>E-mail:</td>
                     <td><input class="textbox" type="text" value="ugtemp@mail.ru" maxlength="100"><br></td>
                 </tr>
                 <tr>
-                    <td>Адрес:</td>
-                    <td><input class="textbox" type="text" value="Моксва, ул.А.Королева, 16" maxlength="200"><br></td>
+                    <td>РђРґСЂРµСЃ:</td>
+                    <td><input class="textbox" type="text" value="РњРѕРєСЃРІР°, СѓР».Рђ.РљРѕСЂРѕР»РµРІР°, 16" maxlength="200"><br></td>
                 </tr>
                 <tr>
-                    <td>Телефон:</td>
+                    <td>РўРµР»РµС„РѕРЅ:</td>
                     <td><input class="textbox" type="text" value="555-66-89" maxlength="30"><br></td>
                 </tr>
                 <tr>
-                    <td>Площадь, м<sup>2</sup>:</td>
+                    <td>РџР»РѕС‰Р°РґСЊ, Рј<sup>2</sup>:</td>
                     <td><input class="textbox" type="text" value="60" maxlength="10" onkeyup = 'this.value=parseInt(this.value) | 0'><br></td>
                 </tr>
                 <tr>
-                    <td>Количество комнат:</td>
+                    <td>РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРЅР°С‚:</td>
                     <td><input class="textbox" type="text" value="1" maxlength="5" onkeyup = 'this.value=parseInt(this.value) | 0'><br></td>
                 </tr>
                 <tr>
-                    <td>Сообщение:</td>
-                    <td><textarea class="textbox" type="" rows="5" cols="50" maxlength="255">Прошу сдлеать ремонтв срок до 26.12.2014</textarea></td>
+                    <td>РЎРѕРѕР±С‰РµРЅРёРµ:</td>
+                    <td><textarea class="textbox" type="" rows="5" cols="50" maxlength="255">РџСЂРѕС€Сѓ СЃРґР»РµР°С‚СЊ СЂРµРјРѕРЅС‚РІ СЃСЂРѕРє РґРѕ 26.12.2014</textarea></td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="Отослать"/>
+                        <input type="submit" value="РћС‚РѕСЃР»Р°С‚СЊ"/>
                     </td>
                 </tr>
             </table>

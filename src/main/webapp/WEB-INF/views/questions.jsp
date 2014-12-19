@@ -86,7 +86,7 @@
             </c:when>
         </c:choose>
         <br>
-        <form:form acceptCharset="UTF-8" id="messageForm" action="/add_question" commandName="question" method="POST">
+        <form:form acceptCharset="UTF-8" id="messageForm" action="add_question" commandName="question" method="POST">
             Ваше имя:<form:input id="nickBox" maxlength="20" path="authorName"/><br>
             Сообщение:<br/><form:textarea class="messageBox" rows="6" cols="50" maxlength="255" path="message"/><br/>
             <input class="sendBtn" type="submit" value="Добавить вопрос"

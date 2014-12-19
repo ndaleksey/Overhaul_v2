@@ -5,8 +5,8 @@
   Time: 16:07
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=windows-1251" %>
-<%@ page pageEncoding="CP1251" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Примеры работ</title>
+    <title>РџСЂРёРјРµСЂС‹ СЂР°Р±РѕС‚</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

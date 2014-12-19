@@ -16,7 +16,7 @@
 
     <!-- Всю статику (изображения, css-файлы, javascript) положим в папку webapp/resources
 		и замаппим их на урл вида /resources/** -->
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <context:component-scan base-package="com.dreamer.controller,com.dreamer.dao,com.dreamer.service"/>
     <!-- View Resolver -->
@@ -31,6 +31,7 @@
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <beans:property name="url" value="jdbc:mysql://localhost:3306/Overhaul"/>
         <beans:property name="username" value="root"/>
+        <beans:property name="password" value="161087"/>
     </beans:bean>
     <!-- Hibernate sessionfactory -->
     <beans:bean id="sessionFactory"
@@ -50,7 +51,7 @@
                 <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul</beans:prop>
                 <beans:prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</beans:prop>
                 <beans:prop key="hibernate.connection.username">root</beans:prop>
-                <beans:prop key="hibernate.connection.password"></beans:prop>
+                <beans:prop key="hibernate.connection.password">161087</beans:prop>
                 <!--<beans:prop key="hibernate.connection.zeroDateTimeBehavior">
                     convertToNull
                 </beans:prop>-->

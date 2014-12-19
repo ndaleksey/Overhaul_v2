@@ -6,8 +6,8 @@
   Time: 21:01
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=windows-1251" %>
-<%@ page pageEncoding="CP1251" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -20,13 +20,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Редактор воросов</title>
+    <title>Р РµРґР°РєС‚РѕСЂ РІРѕСЂРѕСЃРѕРІ</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Attach necessary styles -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
-    <title>Заявка</title>
+    <title>Р—Р°СЏРІРєР°</title>
 </head>
 <body onkeydown="keydown(event)">
 <div id="main">
@@ -34,11 +34,11 @@
         <table class="answersTable">
             <thead>
             <tr>
-                <th>Вопрос</th>
-                <th>Автор</th>
-                <th>Дата вопроса</th>
-                <th>Ответ</th>
-                <th>Дата ответа</th>
+                <th>Р’РѕРїСЂРѕСЃ</th>
+                <th>РђРІС‚РѕСЂ</th>
+                <th>Р”Р°С‚Р° РІРѕРїСЂРѕСЃР°</th>
+                <th>РћС‚РІРµС‚</th>
+                <th>Р”Р°С‚Р° РѕС‚РІРµС‚Р°</th>
             </tr>
             </thead>
             <tbody>
@@ -51,15 +51,15 @@
                     <td id="answer">${question.answer}</td>
                     <td>${question.answerDate}</td>
                     <td>
-                        <button onclick="setAttributes(${question.id}); showPopupWindow()">Ответить</button>
+                        <button onclick="setAttributes(${question.id}); showPopupWindow()">РћС‚РІРµС‚РёС‚СЊ</button>
                         </br>
                         <%--<button onclick="setAttributes(${question.id}, 'answerBox', '${HtmlUtils.htmlEscape(question.answer)}'); showPopupWindow()">--%>
 
                         <button onclick="setAttributes(${question.id}, 'answerBox', '${fn:escapeXml(question.answer)}'); showPopupWindow()">
-                            Изменить
+                            РР·РјРµРЅРёС‚СЊ
                         </button>
                         </br>
-                        <button onclick="setAttributes(${question.id}); showConfirmWindow()">Удалить</button>
+                        <button onclick="setAttributes(${question.id}); showConfirmWindow()">РЈРґР°Р»РёС‚СЊ</button>
                         </br>
                     </td>
                 </tr>
@@ -67,29 +67,34 @@
             </tbody>
         </table>
     </c:if>
+    <c:choose>
+        <c:when test="${empty questionList}">
+            <h1 style="color: red;">РќРµС‚ РЅРё РѕРґРЅРѕРіРѕ РІРѕРїСЂРѕСЃР° РІ Р‘Р”</h1>
+        </c:when>
+    </c:choose>
 </div>
 <div id="popupWindow">
-    <div class="messageBoxTitle">Добавление ответа</div>
-    <form style="display: inline;" accept-charset="utf-8" action="/update_question" method="POST">
+    <div class="messageBoxTitle">Р”РѕР±Р°РІР»РµРЅРёРµ РѕС‚РІРµС‚Р°</div>
+    <form style="display: inline;" accept-charset="utf-8" action="update_question" method="POST">
         <input id="questionId" name="questionId" type="hidden"/>
         <textarea id="answerBox" name="answer" class="messageBox" maxlength="255" rows="5"
                   cols="50" path="answer" content="Hello"></textarea></br></br>
-        <input class="sendBtn" type="submit" value="Сохранить">
+        <input class="sendBtn" type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ">
     </form>
-    <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
+    <button class="sendBtn" onclick="closePopupWindow()">РћС‚РјРµРЅР°</button>
 </div>
 
 <div id="confirmWindow">
-    <div class="messageBoxTitle">Вы действительно хотите удалить запись</div>
-    <form style="display: inline;" accept-charset="utf-8" action="/delete_question" method="POST">
+    <div class="messageBoxTitle">Р’С‹ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ</div>
+    <form style="display: inline;" accept-charset="utf-8" action="delete_question" method="POST">
         <input id="questionIdDelete" name="questionId" type="hidden"/>
-        <input class="sendBtn" type="submit" value="Да">
+        <input class="sendBtn" type="submit" value="Р”Р°">
     </form>
-    <button class="sendBtn" onclick="closeConfirmWindow()">Нет</button>
+    <button class="sendBtn" onclick="closeConfirmWindow()">РќРµС‚</button>
 </div>
 
 <div id="overlay"/>
-<script src="/resources/js/answers.js"></script>
+<script src="<c:url value="/resources/js/answers.js"/>"></script>
 </body>
 </html>
 </input>
