@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Отличный ремонт</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8;"/>
+    <link rel="canonical" href="http://www.templatemonster.com/ru/moto-cms-html-templates-type/51712.html">
+    <link rel="stylesheet" type="text/css" href="../resources/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/preview.css?20130713"/>
+    <link rel="stylesheet" type="text/css"
+          href="../resources/css/preview-responsive.css?3"/>
+    <script type="text/javascript" src="../resources/js/jquery-1.8.1.min.js"></script>
+    <script charset="utf-8">
+        //TODO: some strange value
+        var min_height = 600;
+        $(function () {
+            resizeFrame();
+        });
+        function resizeFrame() {
+            if (1 == 0)
+                return false;
+            var main_iframe = $('#preview');
+            var height = $(window).height() - $('#preview-bar:visible').outerHeight();
+            if ($.browser.opera)
+                height += 5;
+
+            if (height < min_height)
+                height = min_height;
+            $('#preview').height(height);
+            $('#iframelive').height(height);
+            //$('#preview-wrapper').height(height);
+            if ($(window).width() < 1400)
+                $('#min-hide-this').hide();
+            else
+                $('#min-hide-this').show();
+
+        }
+        $(window).resize(function () {
+            resizeFrame();
+        }).load(function () {
+            resizeFrame();
+        });
+        $(document).ready(function () {
+            $('#close').click(function (e) {
+                e.preventDefault();
+                document.location.href = "http://templates.cms-guide.com/51712/";
+                /*$("#preview-bar").hide();
+                 resizeFrame();*/
+            });
+        })
+
+    </script>
+</head>
+<body id='fullscreen-preview'>
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P5DSRW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-P5DSRW');</script>
+<script>
+    //GLOBAL_HEAD_SCRIPT
+</script>
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?48"></script>
+<script type="text/javascript">
+    VK.init({apiId: 2828786, onlyWidgets: true});
+</script>
+<!--<div id="preview-bar">
+    <ul id="bar-inner">
+        <li class="tm-logo block">
+            <a href="/ru/">
+                <img src="http://393252296.r.cdn77.net/ru/themes/rutm/images/preview/tm-logo.png" width="298"
+                     height="57">
+            </a>
+        </li>
+        <li class="block inner info">
+            <ul>
+                <li>Номер: <b>51712</b></li>
+                <li>Тип: Moto CMS HTML</li>
+                <li>Цена шаблона: <strong class="price-cur">$139</strong></li>
+                <li><a href="/ru/moto-cms-html-templates-type/51712.html">Подробнее</a></li>
+            </ul>
+        </li>
+        <li class="block inner">
+            <a href="https://secure.template-help.com/preset/cart.php?act=add&templ=51712&pr_code=k130SdA2Ki3FFWNCP48CI46bjlUdJA"
+               target="_blank" class="buy ga-track-link">
+                Купить сейчас
+            </a>
+        </li>
+        <li class="block" id='sharer'>
+            <a href="#" id="close">Закрыть</a>
+            <style>&lt;!&ndash;
+            #sidebar-share-block li {
+                width: 100px;
+            }
+
+            &ndash;&gt;</style>
+            <ul>
+                <li class="vk-share-btn">
+                    <div>
+                        <div id="vk_like"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Like("vk_like", {
+                                type: "mini",
+                                height: 18,
+                                pageUrl: "http://www.templatemonster.com/ru/moto-cms-html-templates-type/51712.html"
+                            });
+                        </script>
+                    </div>
+                </li>
+                <li class="twttr-share-btn">
+                    <div>
+                        <noindex>
+                            <a rel="nofollow" href="https://twitter.com/share" class="twitter-share-button"
+                               data-url="http://www.templatemonster.com/ru/moto-cms-html-templates-type/51712.html"
+                               data-lang="en"></a>
+                        </noindex>
+                        <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
+                    </div>
+                </li>
+                <li class="fb-share-btn" style="width: 81px;">
+                    <div>
+                        <div id="fb-root"></div>
+                        <script>(function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=322221494492881";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="95"
+                             data-show-faces="false"
+                             data-href="http://www.templatemonster.com/ru/moto-cms-html-templates-type/51712.html"></div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>-->
+<div id="iframelive" class="no-responsive">
+    <div id="preview-wrapper">
+        <iframe id="preview" frameborder="0" src="http://templates.cms-guide.com/51712/"
+                data-src="http://templates.cms-guide.com/51712/"></iframe>
+    </div>
+</div>
+</body>
+</html>

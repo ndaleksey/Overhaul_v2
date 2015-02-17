@@ -91,7 +91,7 @@ body {
     width: 303px;
     height: 68px;
     cursor: pointer;
-    float: right;
+    float: left;
 }
 
 #btn4:hover {
@@ -99,18 +99,19 @@ body {
     width: 303px;
     height: 68px;
     cursor: pointer;
-    float: right;
+    float: left;
 }
 
 #main_text {
-    margin-top: 8%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     margin-left: 25%;
     margin-right: 5%;
     /*width: 75%;*/
     color: goldenrod;
     font-family: "Comic Sans MS";
     /*font-size: 24;*/
-    font-size: 0.4cm;
+    font-size: 0.5cm;
     font-weight: bold;
 }
 

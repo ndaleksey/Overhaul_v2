@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ page pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -54,8 +55,8 @@
     <a href="order" id="btn4"></a>
 
     <div id="contacts">
-        <p style="color: darkorange; font-weight: bold; font-size: 0.6cm">Контакты:</p>
-        <table cellpadding="3" style="color: aliceblue">
+        <p style="color: darkorange; font-weight: bold; font-size: 0.7cm">Контакты:</p>
+        <%--<table cellpadding="3" style="color: aliceblue">
             <tr>
                 <td>
                     <image src="resources/img/smile.png"/>
@@ -71,15 +72,39 @@
             <tr>
                 <td>8-916-645-92-30</td>
             </tr>
+        </table>--%>
+        <table style="color: white; font-size: 0.7cm;">
             <tr>
-                <td><a style="color:chartreuse" href="mailto:ivankoartem@rambler.ru">
-                    <image src="resources/img/mail.png"/>
-                </a></td>
-                <td><a href="mailto:ivankoartem@rambler.ru">ivankoartem@rambler.ru</a></td>
+                <td>Телефон:</td>
+                <td style="vertical-align: middle">
+                    <img src="/resources/img/circle.png" style="margin-right: 20px">8-926-965-23-33
+                </td>
+                <td>
+                    <img src="/resources/img/circle.png" style="margin-right: 20px">8-916-645-92-30
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td colspan="2">ivankoartem@rambler.ru</td>
             </tr>
         </table>
     </div>
+    <br>
+
+    <div id="popupWindow">
+        <div class="messageBoxTitle">Добавление ответа</div>
+        <form style="display: inline;" accept-charset="utf-8" action="update_question" method="POST">
+            <label>От кого:</label>
+            <input type="text" maxlength="30"></br>
+
+        <textarea id="answerBox" name="answer" class="messageBox" maxlength="255" rows="5"
+                  cols="50" path="answer" content="Hello"></textarea></br></br>
+            <input class="sendBtn" type="submit" value="Отправить">
+        </form>
+        <button class="sendBtn" onclick="closePopupWindow()">Отмена</button>
+    </div>
 </div>
 <div id="footer"></div>
+<script src="<c:url value="/resources/js/answers.js"/>"></script>
 </body>
 </html>
