@@ -28,10 +28,10 @@
     <!-- Datasource -->
     <!--class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"-->
     <beans:bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <beans:property name="url" value="jdbc:mysql://localhost:3306/Overhaul"/>
-        <beans:property name="username" value="root"/>
-        <beans:property name="password" value="161087"/>
+        <beans:property name="driverClassName" value="org.postgresql.Driver"/>
+        <beans:property name="url" value="jdbc:postgresql://localhost:5432/test"/>
+        <beans:property name="username" value="postgres"/>
+        <beans:property name="password" value="postgres"/>
     </beans:bean>
     <!-- Hibernate sessionfactory -->
     <beans:bean id="sessionFactory"
@@ -45,13 +45,13 @@
         </beans:property>
         <beans:property name="hibernateProperties">
             <beans:props>
-                <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</beans:prop>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
-                <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
-                <beans:prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/Overhaul</beans:prop>
-                <beans:prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</beans:prop>
-                <beans:prop key="hibernate.connection.username">root</beans:prop>
-                <beans:prop key="hibernate.connection.password">161087</beans:prop>
+                <beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>
+                <beans:prop key="hibernate.connection.url">jdbc:postgresql://localhost:5432/test</beans:prop>
+                <beans:prop key="hibernate.connection.driver_class">org.postgresql.Driver</beans:prop>
+                <beans:prop key="hibernate.connection.username">postgres</beans:prop>
+                <beans:prop key="hibernate.connection.password">postgres</beans:prop>
                 <!--<beans:prop key="hibernate.connection.zeroDateTimeBehavior">
                     convertToNull
                 </beans:prop>-->

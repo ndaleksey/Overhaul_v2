@@ -32,7 +32,7 @@
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.1-GA" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.jboss:jandex:1.1.0.Final" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.30" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:9.4.1208.jre7" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
           <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
@@ -40,7 +40,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/Overhaul_v2/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="Overhaul_v2/web/Web" />
     </root>

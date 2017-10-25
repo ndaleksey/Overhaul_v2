@@ -1,5 +1,7 @@
 package com.dreamer.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -7,7 +9,7 @@ import java.sql.Timestamp;
  * Created by Shishkov A.V. on 15.10.2014.
  */
 @Entity
-@Table(name = "question", schema = "", catalog = "Overhaul")
+@Table(name = "question", schema = "public", catalog = "Test")
 public class Question {
     private int id;
     private String authorName;
@@ -17,7 +19,10 @@ public class Question {
     private Timestamp answerDate;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "sequence", strategy = "sequence",
+            parameters = {@org.hibernate.annotations.Parameter(name = "sequence",
+                    value = "sequence")})
+    @GeneratedValue(generator = "sequence", strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false, unique = true)
     public int getId() {
         return id;
